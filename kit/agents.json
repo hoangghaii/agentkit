@@ -1,0 +1,114 @@
+[
+  {
+    "name": "code-reviewer",
+    "pack": "core",
+    "readOnly": true,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "scout-external",
+    "pack": "core",
+    "readOnly": true,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "debugger",
+    "pack": "core",
+    "readOnly": false,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "mcp-manager",
+    "pack": "core",
+    "readOnly": false,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "database-admin",
+    "pack": "backend-data",
+    "readOnly": false,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "researcher",
+    "pack": "core",
+    "readOnly": true,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "project-manager",
+    "pack": "core",
+    "readOnly": false,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "copywriter",
+    "pack": "web",
+    "readOnly": false,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "journal-writer",
+    "pack": "core",
+    "readOnly": false,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "tester",
+    "pack": "core",
+    "readOnly": false,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "planner",
+    "pack": "core",
+    "readOnly": true,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "docs-manager",
+    "pack": "core",
+    "readOnly": false,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "git-manager",
+    "pack": "core",
+    "readOnly": false,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "ui-ux-designer",
+    "pack": "web",
+    "readOnly": false,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "scout",
+    "pack": "core",
+    "readOnly": true,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  },
+  {
+    "name": "brainstormer",
+    "pack": "core",
+    "readOnly": true,
+    "decision": "revise",
+    "reason": "Explicit contract and inherited session model"
+  }
+]

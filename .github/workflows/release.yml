@@ -1,0 +1,24 @@
+name: Release archive
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run check:sync
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agentkit-engineer
+          path: dist/agentkit-engineer.zip*

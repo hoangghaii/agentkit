@@ -1,0 +1,47 @@
+{
+  "name": "agentkit-engineer",
+  "version": "2.0.0",
+  "description": "Shared engineering skills, agents and project installer for Codex and Claude.",
+  "type": "module",
+  "bin": {
+    "agentkit-engineer": "bin/agentkit.mjs"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "lint": "node scripts/lint.mjs",
+    "validate": "node bin/agentkit.mjs validate",
+    "build": "node bin/agentkit.mjs build",
+    "check:sync": "node scripts/generate.mjs --check",
+    "test:documents": "python3 scripts/document-smoke.py",
+    "test:archive": "python3 scripts/archive-smoke.py",
+    "test:browser": "python3 scripts/browser-smoke.py"
+  },
+  "license": "MIT",
+  "files": [
+    "bin",
+    "scripts",
+    "kit",
+    "skills",
+    "agents",
+    "workflows",
+    "hooks",
+    "templates",
+    "docs",
+    "guide",
+    "README.md",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "tests",
+    "generated"
+  ],
+  "dependencies": {
+    "smol-toml": "1.9.1",
+    "yaml": "2.9.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

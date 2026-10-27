@@ -1,0 +1,5 @@
+# Upstream notice
+
+Source: https://github.com/vercel-labs/agent-skills
+
+The React and composition skill metadata declare MIT. The pinned repository does not supply a standalone root license text for these directories. Original metadata and source attribution are retained. This notice records provenance and does not add or replace upstream terms.

@@ -1,0 +1,206 @@
+[
+  {
+    "old": ".claude/skills/aesthetic/SKILL.md",
+    "new": "skills/aesthetic",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/ai-multimodal/SKILL.md",
+    "new": "skills/ai-multimodal",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/backend-development/SKILL.md",
+    "new": "skills/backend-development",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/better-auth/SKILL.md",
+    "new": "skills/better-auth",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/chrome-devtools/SKILL.md",
+    "new": "skills/chrome-devtools",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/claude-code/skill.md",
+    "new": "skills/claude-code",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/code-review/SKILL.md",
+    "new": "skills/code-review",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/databases/SKILL.md",
+    "new": "skills/databases",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/debugging/SKILL.md",
+    "new": "skills/debugging",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/devops/SKILL.md",
+    "new": "skills/devops",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/docs-seeker/SKILL.md",
+    "new": "skills/docs-seeker",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/document-skills/docx/SKILL.md",
+    "new": "skills/docx",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/document-skills/pdf/SKILL.md",
+    "new": "skills/pdf",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/document-skills/pptx/SKILL.md",
+    "new": "skills/pptx",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/document-skills/xlsx/SKILL.md",
+    "new": "skills/xlsx",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/frontend-design/SKILL.md",
+    "new": "skills/frontend-design",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/frontend-development/SKILL.md",
+    "new": "skills/frontend-development",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/google-adk-python/SKILL.md",
+    "new": "skills/google-adk-python",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/mcp-builder/SKILL.md",
+    "new": "skills/mcp-builder",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/mcp-management/SKILL.md",
+    "new": "skills/mcp-management",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/media-processing/SKILL.md",
+    "new": "skills/media-processing",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/mobile-development/SKILL.md",
+    "new": "skills/mobile-development",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/payment-integration/SKILL.md",
+    "new": "skills/payment-integration",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/planning/SKILL.md",
+    "new": "skills/planning",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/problem-solving/SKILL.md",
+    "new": "skills/problem-solving",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/repomix/SKILL.md",
+    "new": "skills/repomix",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/research/SKILL.md",
+    "new": "skills/research",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/sequential-thinking/SKILL.md",
+    "new": "skills/sequential-thinking",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/shopify/SKILL.md",
+    "new": "skills/shopify",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/skill-creator/SKILL.md",
+    "new": "skills/kit-skill-authoring",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/template-skill/SKILL.md",
+    "new": "templates/skill",
+    "decision": "move",
+    "reason": "Template is not activatable"
+  },
+  {
+    "old": ".claude/skills/threejs/SKILL.md",
+    "new": "skills/threejs",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/ui-styling/SKILL.md",
+    "new": "skills/ui-styling",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  },
+  {
+    "old": ".claude/skills/web-frameworks/SKILL.md",
+    "new": "skills/web-frameworks",
+    "decision": "revise",
+    "reason": "Shared portable skill; preserve bundled resources"
+  }
+]

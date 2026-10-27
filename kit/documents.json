@@ -1,0 +1,47 @@
+{
+  "docx": {
+    "path": "skills/docx",
+    "files": 59,
+    "schemas": 39,
+    "scripts": 11,
+    "license": "skills/docx/LICENSE.txt",
+    "changes": [
+      "CWD-independent sibling imports",
+      "Isolated Office validation profile and explicit renderer errors"
+    ]
+  },
+  "pdf": {
+    "path": "skills/pdf",
+    "files": 12,
+    "schemas": 0,
+    "scripts": 8,
+    "license": "skills/pdf/LICENSE.txt",
+    "changes": [
+      "Preserved AcroForm and bounding box helpers",
+      "Create render directory before writing"
+    ]
+  },
+  "pptx": {
+    "path": "skills/pptx",
+    "files": 56,
+    "schemas": 39,
+    "scripts": 12,
+    "license": "skills/pptx/LICENSE.txt",
+    "changes": [
+      "Preserved inventory/replacement scripts and schemas",
+      "Isolated Office validation profile and explicit renderer errors"
+    ]
+  },
+  "xlsx": {
+    "path": "skills/xlsx",
+    "files": 3,
+    "schemas": 0,
+    "scripts": 1,
+    "license": "skills/xlsx/LICENSE.txt",
+    "changes": [
+      "Portable recalculation with temporary LibreOffice profile",
+      "Preserve input on conversion failure",
+      "Formula errors produce a CLI failure status"
+    ]
+  }
+}

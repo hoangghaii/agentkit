@@ -1,0 +1,54 @@
+name: Verify
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run check:sync
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agentkit-engineer-${{ matrix.os }}
+          path: dist/agentkit-engineer.zip*
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: python scripts/archive-smoke.py
+  documents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: sudo apt-get update && sudo apt-get install -y libreoffice fonts-dejavu-core
+      - run: pip install -r scripts/requirements-documents.txt
+      - run: python scripts/document-smoke.py --output /tmp/agentkit-document-checks
+      - run: python -m pytest -q skills/pdf/scripts/check_bounding_boxes_test.py -p no:cacheprovider
+      - uses: actions/upload-artifact@v4
+        with:
+          name: document-verification
+          path: /tmp/agentkit-document-checks/render-*
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: pip install playwright==1.64.1
+      - run: python -m playwright install --with-deps chromium
+      - run: python skills/webapp-testing/scripts/with_server.py --server "python -m http.server 8765 --bind 127.0.0.1 --directory tests/fixtures/browser" --port 8765 -- python scripts/browser-smoke.py

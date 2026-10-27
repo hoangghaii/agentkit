@@ -1,0 +1,10 @@
+---
+name: kit-fix
+description: "Fix a reproducible bug, type error, failed test or CI failure."
+---
+
+# kit-fix
+
+Identify the failing behavior before editing. --logs starts from logs; --ci starts from the failing job; --types scopes compiler errors; --test scopes a failed test; --ui checks browser behavior. --hard expands investigation; --fast applies to well-understood fixes. Make the fix at its source, add a meaningful regression check where warranted and rerun the relevant checks.
+
+Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.

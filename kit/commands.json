@@ -1,0 +1,426 @@
+[
+  {
+    "alias": "ask",
+    "workflow": "research",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "bootstrap/auto/fast",
+    "workflow": "kit-implement",
+    "arguments": "--auto --fast",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "bootstrap/auto",
+    "workflow": "kit-implement",
+    "arguments": "--auto",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "bootstrap",
+    "workflow": "kit-implement",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "brainstorm",
+    "workflow": "kit-plan",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "code",
+    "workflow": "kit-implement",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "content/cro",
+    "workflow": "kit-content",
+    "arguments": "--cro",
+    "pack": "web",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "content/enhance",
+    "workflow": "kit-content",
+    "arguments": "--enhance",
+    "pack": "web",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "content/fast",
+    "workflow": "kit-content",
+    "arguments": "--fast",
+    "pack": "web",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "content/good",
+    "workflow": "kit-content",
+    "arguments": "--good",
+    "pack": "web",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "cook/auto/fast",
+    "workflow": "kit-implement",
+    "arguments": "--auto --fast",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "cook/auto",
+    "workflow": "kit-implement",
+    "arguments": "--auto",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "cook",
+    "workflow": "kit-implement",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "debug",
+    "workflow": "kit-debug",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "design/3d",
+    "workflow": "kit-design",
+    "arguments": "--3d",
+    "pack": "web",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "design/describe",
+    "workflow": "kit-design",
+    "arguments": "--describe",
+    "pack": "web",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "design/fast",
+    "workflow": "kit-design",
+    "arguments": "--fast",
+    "pack": "web",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "design/good",
+    "workflow": "kit-design",
+    "arguments": "--good",
+    "pack": "web",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "design/screenshot",
+    "workflow": "kit-design",
+    "arguments": "--screenshot",
+    "pack": "web",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "design/video",
+    "workflow": "kit-design",
+    "arguments": "--video",
+    "pack": "web",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "docs/init",
+    "workflow": "kit-docs",
+    "arguments": "--init",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "docs/summarize",
+    "workflow": "kit-docs",
+    "arguments": "--summarize",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "docs/update",
+    "workflow": "kit-docs",
+    "arguments": "--update",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "fix/ci",
+    "workflow": "kit-fix",
+    "arguments": "--ci",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "fix/fast",
+    "workflow": "kit-fix",
+    "arguments": "--fast",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "fix/hard",
+    "workflow": "kit-fix",
+    "arguments": "--hard",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "fix/logs",
+    "workflow": "kit-fix",
+    "arguments": "--logs",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "fix/test",
+    "workflow": "kit-fix",
+    "arguments": "--test",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "fix/types",
+    "workflow": "kit-fix",
+    "arguments": "--types",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "fix/ui",
+    "workflow": "kit-fix",
+    "arguments": "--ui",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "fix",
+    "workflow": "kit-fix",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "git/cm",
+    "workflow": "kit-git",
+    "arguments": "--cm",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "git/cp",
+    "workflow": "kit-git",
+    "arguments": "--cp",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "git/pr",
+    "workflow": "kit-git",
+    "arguments": "--pr",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "integrate/polar",
+    "workflow": "kit-integrate",
+    "arguments": "--polar",
+    "pack": "backend-data",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "integrate/sepay",
+    "workflow": "kit-integrate",
+    "arguments": "--sepay",
+    "pack": "backend-data",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "journal",
+    "workflow": "kit-status",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "plan/ci",
+    "workflow": "kit-plan",
+    "arguments": "--ci",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "plan/cro",
+    "workflow": "kit-plan",
+    "arguments": "--cro",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "plan/fast",
+    "workflow": "kit-plan",
+    "arguments": "--fast",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "plan/hard",
+    "workflow": "kit-plan",
+    "arguments": "--hard",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "plan/two",
+    "workflow": "kit-plan",
+    "arguments": "--two",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "plan",
+    "workflow": "kit-plan",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "review/codebase",
+    "workflow": "kit-review",
+    "arguments": "--codebase",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "scout/ext",
+    "workflow": "kit-scout",
+    "arguments": "--ext",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "scout",
+    "workflow": "kit-scout",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "skill/add",
+    "workflow": "kit-skill-authoring",
+    "arguments": "--add",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "skill/create",
+    "workflow": "kit-skill-authoring",
+    "arguments": "--create",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "skill/fix-logs",
+    "workflow": "kit-skill-authoring",
+    "arguments": "--fix-logs",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "skill/optimize",
+    "workflow": "kit-skill-authoring",
+    "arguments": "--optimize",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "test",
+    "workflow": "kit-test",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "use-mcp",
+    "workflow": "kit-mcp",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  },
+  {
+    "alias": "watzup",
+    "workflow": "kit-status",
+    "arguments": "",
+    "pack": "core",
+    "decision": "merge",
+    "reason": "Variants become arguments to shared workflow"
+  }
+]

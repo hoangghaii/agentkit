@@ -1,0 +1,10 @@
+---
+name: kit-implement
+description: "Implement an approved feature or bootstrap a project through verification."
+---
+
+# kit-implement
+
+Resolve the requested behavior and inspect existing patterns. For a small task implement directly; for complex work form a plan and assign non-overlapping scopes when delegation is available. Make the smallest complete change. Run meaningful checks and review the diff. --auto proceeds through reversible steps within authorization; --fast narrows ceremony, never required validation.
+
+Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.

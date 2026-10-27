@@ -1,0 +1,585 @@
+{
+  "aesthetic": {
+    "positive": [
+      "Assess the visual hierarchy of this dashboard.",
+      "Improve spacing and typography on this product page."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "ai-multimodal": {
+    "positive": [
+      "Analyze this image using the configured Gemini capability.",
+      "Transcribe and summarize this audio clip."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "backend-development": {
+    "positive": [
+      "Implement a rate-limited REST endpoint.",
+      "Design the server-side job processing boundary."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "better-auth": {
+    "positive": [
+      "Add Better Auth email verification to this project.",
+      "Configure session expiry in Better Auth."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "chrome-devtools": {
+    "positive": [
+      "Capture a browser performance trace for this page.",
+      "Inspect the browser console for this rendering failure."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "claude-code": {
+    "positive": [
+      "Fix this Claude Code hook configuration.",
+      "Explain project settings in Claude Code."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "code-review": {
+    "positive": [
+      "Review this diff for regressions.",
+      "Check the authorization changes before merging."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "databases": {
+    "positive": [
+      "Review the indexes used by this query.",
+      "Design a database migration preserving existing rows."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "debugging": {
+    "positive": [
+      "Our test fails only when run after the auth suite.",
+      "Investigate why this API request returns 500."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "devops": {
+    "positive": [
+      "Fix the container deployment health check.",
+      "Configure a CI pipeline for the service."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "docs-seeker": {
+    "positive": [
+      "Find official Next.js cache invalidation documentation.",
+      "Look up the installed database driver transaction API."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "docx": {
+    "positive": [
+      "Edit this Word document while preserving formatting.",
+      "Add tracked changes to this DOCX proposal."
+    ],
+    "negative": [
+      "Analyze this PDF file.",
+      "Fix a Postgres query."
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "frontend-design": {
+    "positive": [
+      "Implement this product page with a polished layout.",
+      "Design a responsive settings interface."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "frontend-development": {
+    "positive": [
+      "Build a typed React form for this existing app.",
+      "Refactor the frontend data-loading boundary."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "google-adk-python": {
+    "positive": [
+      "Build a Python agent workflow with Google ADK.",
+      "Add a tool to this ADK agent."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-content": {
+    "positive": [
+      "Rewrite the landing page hero copy for clarity.",
+      "Improve these product descriptions using verified facts."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-debug": {
+    "positive": [
+      "Use $kit-debug for this task: Our test fails only when run after the auth suite.",
+      "Use $kit-debug for this task: Investigate why this API request returns 500."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-design": {
+    "positive": [
+      "Use $kit-design for this task: Implement this product page with a polished layout.",
+      "Use $kit-design for this task: Design a responsive settings interface."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-docs": {
+    "positive": [
+      "Update the setup guide to match the new CLI.",
+      "Summarize this codebase architecture from source."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-fix": {
+    "positive": [
+      "Use $kit-fix for this task: Our test fails only when run after the auth suite.",
+      "Use $kit-fix for this task: Investigate why this API request returns 500."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-git": {
+    "positive": [
+      "Prepare a focused commit for the reviewed changes.",
+      "Create a pull request description for this patch."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-implement": {
+    "positive": [
+      "Use $kit-implement for this task: Build a typed React form for this existing app.",
+      "Use $kit-implement for this task: Refactor the frontend data-loading boundary."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-integrate": {
+    "positive": [
+      "Use $kit-integrate for this task: Implement a verified payment webhook with idempotency.",
+      "Use $kit-integrate for this task: Integrate Polar subscriptions into the backend."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-mcp": {
+    "positive": [
+      "Use $kit-mcp for this task: Discover which connected tools can read this database.",
+      "Use $kit-mcp for this task: Use the configured MCP server to inspect the schema."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-plan": {
+    "positive": [
+      "Use $kit-plan for this task: Plan the migration from a monolith to two services.",
+      "Use $kit-plan for this task: Create implementation steps for our new search endpoint."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-review": {
+    "positive": [
+      "Use $kit-review for this task: Review this diff for regressions.",
+      "Use $kit-review for this task: Check the authorization changes before merging."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-scout": {
+    "positive": [
+      "Find which files implement the login redirect.",
+      "Trace the data flow from this handler to persistence."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-skill-authoring": {
+    "positive": [
+      "Create a reusable skill for our release checklist.",
+      "Fix the metadata and resource paths in this project skill."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-status": {
+    "positive": [
+      "Summarize what changed and what remains blocked.",
+      "Record the engineering decisions from this task."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-tdd": {
+    "positive": [
+      "Use TDD to add this endpoint: start with a failing test.",
+      "Fix this bug using the red green refactor cycle."
+    ],
+    "negative": [
+      "Change the README title.",
+      "Review this design without implementing or selecting TDD."
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "kit-test": {
+    "positive": [
+      "Run the backend regression checks and report failures.",
+      "Design verification for this authentication change."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "mcp-builder": {
+    "positive": [
+      "Build an MCP server exposing our inventory API.",
+      "Add a schema-validated tool to this MCP server."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "mcp-management": {
+    "positive": [
+      "Discover which connected tools can read this database.",
+      "Use the configured MCP server to inspect the schema."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "media-processing": {
+    "positive": [
+      "Trim this MP4 and normalize its audio.",
+      "Resize these images while preserving their aspect ratio."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "mobile-development": {
+    "positive": [
+      "Implement an accessible mobile navigation flow.",
+      "Debug this Flutter screen state issue."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "payment-integration": {
+    "positive": [
+      "Implement a verified payment webhook with idempotency.",
+      "Integrate Polar subscriptions into the backend."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "pdf": {
+    "positive": [
+      "Extract tables from this PDF.",
+      "Fill the form fields in this PDF and verify the result."
+    ],
+    "negative": [
+      "Edit tracked changes in a Word document.",
+      "Build a React button."
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "planning": {
+    "positive": [
+      "Plan the migration from a monolith to two services.",
+      "Create implementation steps for our new search endpoint."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "pptx": {
+    "positive": [
+      "Create a PowerPoint deck from this outline.",
+      "Update these PPTX slide titles and inspect the layout."
+    ],
+    "negative": [
+      "Recalculate spreadsheet totals.",
+      "Debug a server error."
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "problem-solving": {
+    "positive": [
+      "This design keeps growing special cases; simplify the model.",
+      "Challenge the assumption that every job needs its own service."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "repomix": {
+    "positive": [
+      "Package this repository into a context snapshot.",
+      "Create a filtered repository export for a design review."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "research": {
+    "positive": [
+      "Compare SQLite and Postgres for this offline app.",
+      "Research the official retry semantics of this API."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "sequential-thinking": {
+    "positive": [
+      "Break down the dependencies of this multi-stage migration.",
+      "Re-evaluate the options after our latency constraint changed."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "shopify": {
+    "positive": [
+      "Update this Shopify Liquid product template.",
+      "Build a Shopify app webhook handler."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "supabase-postgres-best-practices": {
+    "positive": [
+      "Review this Postgres RLS policy for tenant isolation.",
+      "Explain why this Postgres query is doing a sequential scan."
+    ],
+    "negative": [
+      "Style a navigation menu.",
+      "Summarize a Word document."
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "threejs": {
+    "positive": [
+      "Add orbit controls to this Three.js scene.",
+      "Optimize rendering of these 3D meshes."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "ui-styling": {
+    "positive": [
+      "Style these controls using Tailwind and the existing tokens.",
+      "Add accessible dark mode styling to this page."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "vercel-composition-patterns": {
+    "positive": [
+      "Refactor this component with many boolean props.",
+      "Design a compound menu component API using context."
+    ],
+    "negative": [
+      "Optimize a Postgres index.",
+      "Convert an MP4 file."
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "vercel-react-best-practices": {
+    "positive": [
+      "Remove waterfalls from this React server component.",
+      "Reduce rerenders and client bundle size in this Next.js page."
+    ],
+    "negative": [
+      "Rewrite our product tagline.",
+      "Fix a Python command-line parser."
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "web-design-guidelines": {
+    "positive": [
+      "Audit this website for keyboard accessibility.",
+      "Review the usability and form labels on this page."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "web-frameworks": {
+    "positive": [
+      "Add a Next.js route using the current app conventions.",
+      "Implement a Turborepo package boundary for our web apps."
+    ],
+    "negative": [
+      "Translate this greeting into Vietnamese.",
+      "What is 2 + 2?"
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "webapp-testing": {
+    "positive": [
+      "Test the local checkout UI in Playwright.",
+      "Reproduce this browser navigation bug and capture a screenshot."
+    ],
+    "negative": [
+      "Review a SQL execution plan.",
+      "Edit the release notes text."
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  },
+  "xlsx": {
+    "positive": [
+      "Repair the formulas in this XLSX workbook.",
+      "Create a spreadsheet with recalculated totals."
+    ],
+    "negative": [
+      "Restyle this PowerPoint slide.",
+      "Summarize an audio recording."
+    ],
+    "evaluation": "Host acceptance scenarios; static validation checks coverage only."
+  }
+}

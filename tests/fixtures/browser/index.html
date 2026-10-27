@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Browser verification</title>
+<main><h1>Browser verification</h1><button type="button" id="save">Save</button><p role="status" hidden></p></main>
+<script>
+document.querySelector('#save').addEventListener('click', () => {
+  const status = document.querySelector('[role="status"]');
+  status.hidden = false;
+  status.textContent = 'Saved';
+});
+</script></html>

@@ -1,0 +1,10 @@
+---
+name: kit-plan
+description: "Plan implementation for a feature, migration or architecture change before editing code."
+---
+
+# kit-plan
+
+Read the request, project instructions and relevant code. Identify constraints, dependencies and acceptance criteria. Compare approaches only where there is a real tradeoff. Produce ordered, reviewable steps with verification and rollback considerations. --fast limits research; --hard expands risk analysis; --two compares two approaches; --ci investigates pipeline constraints; --cro covers website conversion. Do not implement unless requested.
+
+Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
