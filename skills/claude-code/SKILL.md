@@ -7,6 +7,8 @@ Resource paths are relative to this skill directory, independent of the shell wo
 
 # Claude Code Expert
 
+For settings, hooks, skills/roles and MCP, use the references verified on 2026-10-28 first. Other deep references retain historical examples: check the installed CLI and official documentation before applying version-dependent commands or fields.
+
 Claude Code is Anthropic's agentic coding tool that lives in the terminal and helps turn ideas into code faster. It combines autonomous planning, execution, and validation with extensibility through skills, plugins, MCP servers, and hooks.
 
 ## When to Use This Skill
@@ -60,7 +62,7 @@ Load these references when needed for detailed guidance:
   - Complete command catalog: /cook, /plan, /debug, /test, /fix:*, /docs:*, /git:*, /design:*, /content:*
 
 - **Agent Skills**: `references/agent-skills.md`
-  - Creating skills, skill.json format, best practices, API usage
+  - Creating skills, SKILL.md frontmatter, best practices, API usage
 
 ### Integration & Extension
 - **MCP Integration**: `references/mcp-integration.md`

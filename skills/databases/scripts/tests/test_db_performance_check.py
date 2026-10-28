@@ -1,6 +1,7 @@
 """Tests for db_performance_check.py"""
 
 import json
+import sqlite3
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -143,6 +144,7 @@ class TestPerformanceAnalyzer:
         mock_db.command.side_effect = [
             {"was": 0},  # profile -1 (get status)
             {},          # profile 1 (enable)
+            {"dataSize": 1024 * 1024 * 100, "indexSize": 1024 * 1024 * 10, "collections": 5},
         ]
 
         # Mock slow queries
@@ -162,7 +164,7 @@ class TestPerformanceAnalyzer:
 
         # Mock collection stats
         mock_coll = MagicMock()
-        mock_coll.aggregate.return_value = [{"storageStats": {}}]
+        mock_coll.aggregate.return_value.next.return_value = {"storageStats": {}}
         mock_coll.list_indexes.return_value = [{"name": "_id_"}]
         mock_coll.find.return_value.limit.return_value = [
             {"_id": 1, "name": "Alice", "email": "alice@example.com"}
@@ -190,6 +192,7 @@ class TestPerformanceAnalyzer:
         assert isinstance(report.slow_queries, list)
         assert isinstance(report.index_recommendations, list)
         assert isinstance(report.database_metrics, dict)
+        assert report.database_metrics['database_size_mb'] == 100
 
     @patch('db_performance_check.psycopg2')
     def test_analyze_postgres(self, mock_psycopg2, mock_postgres_conn):
@@ -239,6 +242,18 @@ class TestPerformanceAnalyzer:
         assert len(report.slow_queries) > 0
         assert len(report.index_recommendations) > 0
 
+        # Execute the statistics-view queries against their real column names.
+        # This catches SQL that passes loose mocks but references nonexistent
+        # tablename/indexname columns in PostgreSQL's monitoring views.
+        with sqlite3.connect(':memory:') as database:
+            database.create_function('pg_relation_size', 1, lambda value: 0)
+            database.execute('CREATE TABLE pg_stat_user_tables (schemaname TEXT, relname TEXT, seq_scan INTEGER, seq_tup_read INTEGER, idx_scan INTEGER)')
+            database.execute('CREATE TABLE pg_stat_user_indexes (schemaname TEXT, relname TEXT, indexrelname TEXT, idx_scan INTEGER, indexrelid INTEGER)')
+            for call in mock_cursor.execute.call_args_list:
+                statement = call.args[0]
+                if 'FROM pg_stat_user_tables' in statement or 'FROM pg_stat_user_indexes' in statement:
+                    database.execute(statement).fetchall()
+
     def test_print_report(self, capsys):
         """Test report printing."""
         analyzer = PerformanceAnalyzer("mongodb", "mongodb://localhost")
@@ -274,7 +289,7 @@ class TestPerformanceAnalyzer:
         captured = capsys.readouterr()
         assert "Database Performance Report" in captured.out
         assert "testdb" in captured.out
-        assert "150.5ms" in captured.out
+        assert "150.50ms" in captured.out
         assert "users" in captured.out
 
     def test_save_report(self, tmp_path):

@@ -4,6 +4,15 @@ description: "Guide for creating effective skills. This skill should be used whe
 license: Complete terms in LICENSE.txt
 ---
 
-Resource paths are relative to this skill directory, independent of the shell working directory. Use absolute script paths when running from a project subdirectory. Host tool names vary: use equivalent available tools and report missing capabilities. Read project dependencies to identify the version in use before applying API examples; older bundled examples require checking official documentation.
+# kit-skill-authoring
 
-Use this skill for the capability described above. Read [the detailed guide](references/guide.md) for the relevant workflow, examples and bundled resource paths.
+Create or revise portable project skills. Read [the detailed guide](references/guide.md) and the current project conventions. Resolve resources from this skill directory, independent of shell working directory.
+
+## Modes
+
+- `--create`: define the capability, trigger boundaries and realistic examples; scaffold only needed scripts/references/assets. Keep name and directory aligned and write valid discovery metadata.
+- `--add`: inspect the supplied skill/repository, verify source and license, avoid duplicating an installed capability, and bring in required resources. Record the upstream commit/checksum and local adaptations; normalize host-tool names without inventing tool access. Keep external dependencies optional until used.
+- `--fix-logs`: reproduce the reported skill/script failure from supplied logs, locate the failing path or dependency, make a targeted correction and rerun the relevant reproduction. Do not silently expand permissions or change unrelated host configuration.
+- `--optimize`: improve trigger precision, instruction clarity and resource loading using demonstrated behavior. Preserve existing capabilities and source terms; move deep detail into references rather than discarding it.
+
+With no flag, select the mode from the request. Verify metadata, resource links and changed scripts, and check realistic positive/negative prompts for substantial revisions. Do not overwrite another skill or alter user-wide settings without task authorization. Use host-native capabilities; service-specific keys are not required for ordinary skill authoring.

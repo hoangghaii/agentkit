@@ -15,26 +15,26 @@ List affected files with:
 - Action type (modify/create/delete)
 - Brief change description
 - Dependencies on other changes
-- Fully respect the `./docs/development-rules.md` file.
+- Follow project instructions and applicable development rules.
 
 ## Workflow Process
 
 1. **Initial Analysis** → Read docs, understand context
-2. **Research Phase** → Spawn researchers in parallel, investigate approaches
+2. **Research Phase** → Investigate material uncertainties directly or delegate substantial independent research when useful and available
 3. **Synthesis** → Analyze reports, identify optimal solution
 4. **Design Phase** → Create architecture, implementation design
-5. **Plan Documentation** → Write comprehensive plan in Markdown
+5. **Plan Documentation** → Write `plan.md` and one `phase-NN-name.md` per meaningful phase, following [plan organization](plan-organization.md)
 6. **Review & Refine** → Ensure completeness, clarity, actionability
 
 ## Output Requirements
 
 ### What Planners Do
 - Create plans ONLY (no implementation)
-- Provide plan file path and summary
+- Provide the saved overview path and phase summary. A read-only planner hands proposed paths and complete contents to the coordinating agent instead of claiming files exist.
 - Self-contained plans with necessary context
 - Code snippets/pseudocode when clarifying
 - Multiple options with trade-offs when appropriate
-- Fully respect the `./docs/development-rules.md` file.
+- Follow project instructions and applicable development rules.
 
 ### Writing Style
 **IMPORTANT:** Sacrifice grammar for concision
@@ -64,7 +64,7 @@ List affected files with:
 - Design for future modifications
 - Document decision rationale
 - Avoid over-engineering
-- Fully respect the `./docs/development-rules.md` file.
+- Follow project instructions and applicable development rules.
 
 ### Research Depth
 - When uncertain, research more

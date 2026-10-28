@@ -258,7 +258,7 @@ class PerformanceAnalyzer:
             cur.execute("""
                 SELECT
                     schemaname,
-                    tablename,
+                    relname AS tablename,
                     seq_scan,
                     seq_tup_read,
                     idx_scan
@@ -281,12 +281,12 @@ class PerformanceAnalyzer:
             cur.execute("""
                 SELECT
                     schemaname,
-                    tablename,
-                    indexname,
+                    relname AS tablename,
+                    indexrelname AS indexname,
                     idx_scan
                 FROM pg_stat_user_indexes
                 WHERE idx_scan = 0
-                    AND indexname NOT LIKE '%_pkey'
+                    AND indexrelname NOT LIKE '%_pkey'
                 ORDER BY pg_relation_size(indexrelid) DESC
             """)
 

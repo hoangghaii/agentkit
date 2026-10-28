@@ -97,3 +97,32 @@ test('reinstall respects deletion of unowned empty config containers',t=>{
   assert.equal(install(p,['core'],['claude']).ok,true);
   assert.equal(Object.hasOwn(readJSON(path.join(p,'.claude/settings.json')),'custom'),false);
 });
+test('empty JSON config is rejected before any installation writes',t=>{
+  const p=temp(t),config=path.join(p,'.claude/settings.json');
+  write(config,'');
+  const result=install(p,['core'],['codex','claude']);
+  assert.equal(result.ok,false);
+  assert.ok(result.conflicts.some(c=>c.file==='.claude/settings.json'));
+  assert.equal(fs.readFileSync(config,'utf8'),'');
+  assert.equal(fs.existsSync(path.join(p,'AGENTS.md')),false);
+  assert.equal(fs.existsSync(path.join(p,'.agentkit/manifest.json')),false);
+});
+test('partial uninstall keeps selected hosts and packs for recovery',t=>{
+  const p=temp(t);install(p,['core','web'],['codex','claude']);
+  const file=path.join(p,'.agents/skills/kit-plan/SKILL.md'),original=fs.readFileSync(file);
+  fs.appendFileSync(file,'\nUser change\n');
+  assert.equal(install(p,[],[],{uninstall:true}).ok,false);
+  const manifest=readJSON(path.join(p,'.agentkit/manifest.json'));
+  assert.deepEqual(manifest.packs,['core','web']);assert.deepEqual(manifest.agents,['codex','claude']);
+  assert.equal(fs.existsSync(path.join(p,'.claude/skills/webapp-testing/SKILL.md')),false);
+  write(file,original);
+  assert.equal(install(p,manifest.packs,manifest.agents).ok,true);
+  assert.ok(fs.existsSync(path.join(p,'.claude/skills/webapp-testing/SKILL.md')));
+  assert.equal(status(p).changed.length,0);
+});
+test('empty host selection cannot silently discard an installation',t=>{
+  const p=temp(t);install(p,['core'],['codex']);
+  const before=fs.readFileSync(path.join(p,'.agentkit/manifest.json'));
+  assert.throws(()=>install(p,['core'],[]),/at least one target agent/);
+  assert.deepEqual(fs.readFileSync(path.join(p,'.agentkit/manifest.json')),before);
+});

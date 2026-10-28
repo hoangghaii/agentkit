@@ -305,7 +305,7 @@ rm /path/to/directory/test.txt
 
 ```bash
 # Verify hooks.json syntax
-cat .claude/hooks.json | jq .
+cat .claude/settings.json | jq .
 
 # Check hook script permissions
 chmod +x .claude/scripts/hook.sh

@@ -26,6 +26,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.14'
+      - run: python -m unittest discover -s tests -p 'test_*.py'
       - run: python scripts/archive-smoke.py
   documents:
     runs-on: ubuntu-latest
@@ -52,3 +53,17 @@ jobs:
       - run: pip install playwright==1.64.1
       - run: python -m playwright install --with-deps chromium
       - run: python skills/webapp-testing/scripts/with_server.py --server "python -m http.server 8765 --bind 127.0.0.1 --directory tests/fixtures/browser" --port 8765 -- python scripts/browser-smoke.py
+  preserved-helpers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: pip install -r scripts/requirements-helper-tests.txt
+      - run: python -m pytest -q skills/*/scripts/tests/test_*.py skills/pdf/scripts/check_bounding_boxes_test.py -p no:cacheprovider
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node skills/docs-seeker/scripts/tests/test-detect-topic.js
+      - run: node skills/docs-seeker/scripts/tests/test-analyze-llms.js

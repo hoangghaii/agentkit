@@ -278,7 +278,7 @@ Use the Document class from `scripts/document.py` for all tracked changes and co
 # Search for document.py to locate the skill root
 # Note: /mnt/skills is used here as an example; check your context for the actual location
 find /mnt/skills -name "document.py" -path "*/docx/scripts/*" 2>/dev/null | head -1
-# Example output: /mnt/./scripts/document.py
+# Example output: /mnt/skills/docx/scripts/document.py
 # Skill root is: /mnt/skills/docx
 ```
 

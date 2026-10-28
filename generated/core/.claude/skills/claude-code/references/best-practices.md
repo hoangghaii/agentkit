@@ -56,8 +56,8 @@ Copy `.claude/.env.example` to `.claude/.env` and fill in:
 - `.claude/settings.json`
 - `.claude/commands/`
 - `skills/`
-- `.claude/hooks.json`
-- `.claude/mcp.json` (without secrets)
+- `.claude/settings.json`
+- `.mcp.json` (without secrets)
 - `.claude/.env.example`
 
 **What NOT to commit:**
@@ -122,7 +122,7 @@ Review hook scripts before execution:
 
 ```bash
 # Check hooks.json
-cat .claude/hooks.json | jq .
+cat .claude/settings.json | jq .
 
 # Review scripts
 cat .claude/scripts/hook.sh

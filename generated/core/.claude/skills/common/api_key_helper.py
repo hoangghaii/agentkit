@@ -218,38 +218,20 @@ def get_api_key_or_exit(skill_dir: Optional[Path] = None) -> str:
         API key string
     """
     api_key = find_api_key(skill_dir)
+    if api_key:
+        return api_key
 
-    if not api_key:
-        print("\n❌ Error: GEMINI_API_KEY not found!", file=sys.stderr)
-        print("\n📋 Please set your API key using one of these methods (in priority order):", file=sys.stderr)
-
-        if skill_dir is None:
-            skill_dir = Path(__file__).parent
-        skill_dir = Path(skill_dir).resolve()
-    project_dir = skill_dir.parent.parent
-    if project_dir.name in {'.claude', '.agents'}:
-        project_dir = project_dir.parent
-
-        print("\n1️⃣  Environment variable (recommended for development):", file=sys.stderr)
-        print("   export GEMINI_API_KEY='your-api-key'", file=sys.stderr)
-
-        print("\n2️⃣  Project root .env file:", file=sys.stderr)
-        print(f"   echo 'GEMINI_API_KEY=your-api-key' > {project_dir}/.env", file=sys.stderr)
-
-        print("\n3️⃣  .claude/.env file:", file=sys.stderr)
-        print(f"   echo 'GEMINI_API_KEY=your-api-key' > {project_dir}/.claude/.env", file=sys.stderr)
-
-        print("\n4️⃣  skills/.env file (shared across all Gemini skills):", file=sys.stderr)
-        print(f"   echo 'GEMINI_API_KEY=your-api-key' > {project_dir}/skills/.env", file=sys.stderr)
-
-        print("\n5️⃣  Skill directory .env file:", file=sys.stderr)
-        print(f"   echo 'GEMINI_API_KEY=your-api-key' > {skill_dir}/.env", file=sys.stderr)
-
-        print("\n🔑 Get your API key at: https://aistudio.google.com/apikey", file=sys.stderr)
-        print("\n💡 Tip: Add .env files to .gitignore to avoid committing API keys", file=sys.stderr)
-        sys.exit(1)
-
-    return api_key
+    resolved = Path(skill_dir or Path(__file__).parent).resolve()
+    project = resolved.parent.parent
+    if project.name in {'.claude', '.agents'}:
+        project = project.parent
+    print("Error: GEMINI_API_KEY not found. Core workflows do not require this key.", file=sys.stderr)
+    print("For this optional Gemini operation, set GEMINI_API_KEY in the process environment", file=sys.stderr)
+    print("or in one of these configuration files (in priority order):", file=sys.stderr)
+    for location in [project / '.env', project / '.claude/.env', resolved.parent / '.env', resolved / '.env']:
+        print(f"  {location}", file=sys.stderr)
+    print("Get a key at https://aistudio.google.com/apikey; keep real .env files out of Git.", file=sys.stderr)
+    raise SystemExit(1)
 
 
 def get_client(skill_dir: Optional[Path] = None):

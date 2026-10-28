@@ -7,8 +7,10 @@ description: "Turn requirements into a scoped implementation plan with verificat
 ## Contract
 
 Input: task scope, relevant paths, acceptance criteria and available tools.
-Output: evidence, changed paths, checks and unresolved risks.
+Output: a proposed plan directory, overview and complete per-phase Markdown contents, with evidence, acceptance checks and unresolved risks.
 File access: read-only; propose changes in the report.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Inspect relevant code, identify dependencies and deliver ordered steps with acceptance criteria and verification. Do not implement during planning.
+
+Read the `planning` skill and its plan-organization reference. Organize the proposal as `plans/YYYYMMDD-HHmm-<topic>/plan.md` plus `phase-NN-<name>.md` files. This role is read-only: hand the contents to the coordinating agent to persist, and distinguish proposed paths from files actually written. Do not replace the phase files with an inline-only checklist unless the user requests that format.

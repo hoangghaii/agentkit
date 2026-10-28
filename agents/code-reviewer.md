@@ -12,3 +12,5 @@ File access: read-only; propose changes in the report.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Trace affected paths and report only evidence-backed issues with severity, file/line, failure scenario and a suggested fix.
+
+Compare supplied plan phases and TODOs with observed implementation and check results. Return proposed status corrections without editing plan files. Bash is for diff/test/build evidence, not source edits.

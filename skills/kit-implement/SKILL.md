@@ -5,6 +5,18 @@ description: "Implement an approved feature or bootstrap a project through verif
 
 # kit-implement
 
-Resolve the requested behavior and inspect existing patterns. For a small task implement directly; for complex work form a plan and assign non-overlapping scopes when delegation is available. Make the smallest complete change. Run meaningful checks and review the diff. --auto proceeds through reversible steps within authorization; --fast narrows ceremony, never required validation.
+Resolve the requested behavior and inspect existing patterns. Use the project instructions and only relevant skills. Implement small tasks directly; for complex work identify acceptance criteria and dependencies before editing.
 
-Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
+## Entry modes
+
+- Default (`/cook`): implement the requested feature. If the user supplies an existing plan, use it.
+- `--from-plan` (`/code`): locate the supplied or clearly active plan, read `plan.md` and the relevant phase files, and execute pending steps in dependency order. If no plan is identifiable, obtain the missing plan or prepare one within the user's scope rather than inventing its contents.
+- `--bootstrap`: initialize the requested new project with the selected stack. Inspect the target first; preserve existing files, choose only required dependencies and verify the initial application can run/build. Do not scaffold over an existing project blindly.
+- `--auto`: proceed through authorized reversible stages without repeated approval. This does not expand permission to deploy, publish, push or message.
+- `--fast`: reduce ceremony for a well-understood task; retain necessary verification and review.
+
+## Delivery and plan progress
+
+Make the smallest complete change. Run the relevant tests, type checks and build checks, inspect failures, and review the diff. Do not claim success from placeholder commands or skipped checks.
+
+When following a plan, update its phase checkboxes and overview status only after the associated acceptance criteria pass. Keep incomplete or blocked work visible, with concrete evidence. A read-only reviewer reports proposed status corrections; the coordinator or project-manager writes them. Update affected existing documentation, roadmap and changelog when the change warrants it, without creating unrelated files. Hand off changed paths, checks, plan progress and remaining risks.

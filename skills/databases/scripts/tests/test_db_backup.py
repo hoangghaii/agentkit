@@ -1,6 +1,8 @@
 """Tests for db_backup.py"""
 
 import json
+import gzip
+import io
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -89,23 +91,111 @@ class TestBackupManager:
     @patch('subprocess.run')
     def test_backup_postgres(self, mock_run, temp_backup_dir):
         """Test PostgreSQL backup creation."""
-        mock_run.return_value = Mock(returncode=0, stderr="")
+        def write_dump(command, *, stdout, **kwargs):
+            stdout.write("CREATE TABLE example (id integer);\n")
+            return Mock(returncode=0, stderr="")
+
+        mock_run.side_effect = write_dump
 
         manager = BackupManager("postgres", temp_backup_dir)
 
-        with patch('builtins.open', create=True) as mock_open:
-            mock_open.return_value.__enter__.return_value = MagicMock()
+        backup_info = manager.create_backup(
+            "postgresql://localhost/testdb",
+            "testdb",
+            compress=False,
+            verify=False
+        )
 
-            backup_info = manager.create_backup(
-                "postgresql://localhost/testdb",
-                "testdb",
-                compress=False,
-                verify=False
-            )
+        assert backup_info is not None
+        assert backup_info.database_type == "postgres"
+        assert backup_info.database_name == "testdb"
+        assert (Path(temp_backup_dir) / backup_info.filename).read_text() == "CREATE TABLE example (id integer);\n"
 
-            assert backup_info is not None
-            assert backup_info.database_type == "postgres"
-            assert backup_info.database_name == "testdb"
+    @pytest.mark.parametrize("returncode", [0, 1])
+    @patch('db_backup.subprocess.Popen')
+    def test_compressed_postgres_waits_for_dump(self, popen, returncode, temp_backup_dir):
+        """A real gzip artifact and the dump exit status determine success."""
+        process = Mock()
+        process.stdout = io.BytesIO(b"CREATE TABLE example (id integer);\n")
+        process.returncode = None
+        def wait():
+            process.returncode = returncode
+            return returncode
+        process.wait.side_effect = wait
+        process.poll.side_effect = lambda: process.returncode
+        popen.return_value = process
+        manager = BackupManager("postgres", temp_backup_dir)
+        info = manager.create_backup("postgresql://localhost/testdb", "testdb", compress=True, verify=False)
+        process.wait.assert_called_once()
+        process.kill.assert_not_called()
+        popen.assert_called_once()
+        assert popen.call_args.args[0][0] == "pg_dump"
+        assert popen.call_args.kwargs['stderr'] is not None
+        if returncode == 0:
+            assert info is not None
+            with gzip.open(Path(temp_backup_dir) / info.filename, 'rb') as backup:
+                assert backup.read() == b"CREATE TABLE example (id integer);\n"
+        else:
+            assert info is None
+            assert not list(Path(temp_backup_dir).glob('*.sql.gz'))
+            assert not list(Path(temp_backup_dir).glob('*.json'))
+
+    @patch('db_backup.subprocess.run')
+    def test_plain_postgres_collision_preserves_existing_backup(self, run, temp_backup_dir):
+        backup = Path(temp_backup_dir) / 'postgres_testdb_fixture.sql'
+        backup.write_text('existing SQL backup')
+        manager = BackupManager('postgres', temp_backup_dir)
+        assert manager._backup_postgres('postgresql://localhost/testdb', 'testdb', 'fixture', False, False) is None
+        assert backup.read_text() == 'existing SQL backup'
+        run.assert_not_called()
+
+    @pytest.mark.parametrize('failure', ['exit', 'exception'])
+    @patch('db_backup.subprocess.run')
+    def test_plain_postgres_failure_removes_only_owned_partial(self, run, failure, temp_backup_dir):
+        def write_partial(command, *, stdout, **kwargs):
+            stdout.write('partial SQL dump')
+            if failure == 'exception':
+                raise OSError('fixture process failure')
+            return Mock(returncode=1, stderr='fixture dump failure')
+        run.side_effect = write_partial
+        manager = BackupManager('postgres', temp_backup_dir)
+        assert manager._backup_postgres('postgresql://localhost/testdb', 'testdb', 'fixture', False, False) is None
+        assert not list(Path(temp_backup_dir).glob('*.sql'))
+        assert not list(Path(temp_backup_dir).glob('*.json'))
+
+    @patch('db_backup.subprocess.Popen')
+    def test_compressed_postgres_stream_error_removes_partial_file(self, popen, temp_backup_dir):
+        """An interrupted stream cannot leave a backup-looking partial file."""
+        process = Mock(stdout=io.BytesIO(b"fixture dump"))
+        process.poll.return_value = None
+        process.wait.return_value = -9
+        popen.return_value = process
+        def fail_after_write(source, target):
+            target.write(b"partial fixture dump")
+            raise OSError('fixture disk full')
+        manager = BackupManager('postgres', temp_backup_dir)
+        with patch('db_backup.shutil.copyfileobj', side_effect=fail_after_write):
+            info = manager.create_backup('postgresql://localhost/testdb', 'testdb', compress=True)
+        assert info is None
+        process.kill.assert_called_once()
+        process.wait.assert_called_once()
+        assert not list(Path(temp_backup_dir).glob('*.sql.gz'))
+        assert not list(Path(temp_backup_dir).glob('*.json'))
+
+    @patch('db_backup.subprocess.Popen')
+    def test_compressed_postgres_collision_preserves_existing_backup(self, popen, temp_backup_dir):
+        """Failure cleanup must not delete a previous backup with the same name."""
+        process = Mock(stdout=io.BytesIO(b"fixture dump"))
+        process.poll.return_value = None
+        popen.return_value = process
+        backup = Path(temp_backup_dir) / 'postgres_testdb_fixture.sql.gz'
+        backup.write_bytes(b'existing fixture backup')
+        manager = BackupManager('postgres', temp_backup_dir)
+        info = manager._backup_postgres('postgresql://localhost/testdb', 'testdb', 'fixture', True, False)
+        assert info is None
+        assert backup.read_bytes() == b'existing fixture backup'
+        process.kill.assert_called_once()
+        process.wait.assert_called_once()
 
     def test_backup_postgres_no_database(self, temp_backup_dir):
         """Test PostgreSQL backup without database name."""
@@ -211,6 +301,23 @@ class TestBackupManager:
             )
 
             assert result is True
+
+    @pytest.mark.parametrize("returncode", [0, 1])
+    @patch('db_backup.subprocess.run')
+    def test_restore_compressed_postgres_passes_decoded_sql(self, run, returncode, temp_backup_dir):
+        """psql must receive SQL through its descriptor, never gzip bytes."""
+        sql = b"CREATE TABLE example (id integer);\n"
+        backup = Path(temp_backup_dir) / 'fixture.sql.gz'
+        with gzip.open(backup, 'wb') as target:
+            target.write(sql)
+        def read_input(command, *, stdin, **kwargs):
+            assert os.read(stdin.fileno(), len(sql) + 20) == sql
+            assert 'ON_ERROR_STOP=1' in command
+            return Mock(returncode=returncode, stderr=b'fixture error' if returncode else b'')
+        run.side_effect = read_input
+        manager = BackupManager('postgres', temp_backup_dir)
+        assert manager.restore_backup(backup.name, 'postgresql://localhost/testdb') is (returncode == 0)
+        run.assert_called_once()
 
     def test_restore_nonexistent_backup(self, temp_backup_dir):
         """Test restore with non-existent backup file."""

@@ -1,10 +1,31 @@
 ---
 name: kit-plan
-description: "Plan implementation for a feature, migration or architecture change before editing code."
+description: "Compare technical options or create a persisted implementation plan with separate phase files before implementation."
 ---
 
 # kit-plan
 
-Read the request, project instructions and relevant code. Identify constraints, dependencies and acceptance criteria. Compare approaches only where there is a real tradeoff. Produce ordered, reviewable steps with verification and rollback considerations. --fast limits research; --hard expands risk analysis; --two compares two approaches; --ci investigates pipeline constraints; --cro covers website conversion. Do not implement unless requested.
+Read project instructions and relevant code, then choose the mode before creating artifacts. Apply YAGNI, KISS and DRY. Use equivalent host tools; delegate substantial independent work only when useful and available.
 
-Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
+## Brainstorming: --brainstorm
+
+Use the `brainstormer` role or perform its work directly. Clarify the objective and constraints, compare feasible options, challenge assumptions, identify risks and recommend an approach with reasons. Report a decision summary and unresolved questions. This mode does not implement code or automatically create an implementation plan and phase files. Save the decision summary only when requested. Move to implementation planning when that is requested; do not require repeated confirmation for work already authorized.
+
+## Implementation planning
+
+Load the sibling `planning` skill and its [plan organization](../planning/references/plan-organization.md) and [output standards](../planning/references/output-standards.md). Unless the user requests inline-only output, create `plans/YYYYMMDD-HHmm-<topic>/` in the target project using current local time. Reuse the supplied plan when revising or continuing it.
+
+- `plan.md`: concise scope, approach, dependencies and a status table linking to every phase.
+- `phase-01-<name>.md`, `phase-02-<name>.md`, and so on: one file per meaningful phase, with scope, affected files, ordered steps, todo checkboxes, acceptance checks and material risks.
+
+Read back saved files and verify relative links. Return the actual overview path and phase summary; never claim proposed files exist. If writes are unavailable, return proposed paths and complete contents for handoff. A delegated read-only planner supplies per-file contents; the coordinator persists and verifies them.
+
+## Planning modes
+
+- `--fast`: reduce research and detail; still write required overview and phase files.
+- `--hard`: expand investigation and risk analysis where complexity warrants it.
+- `--two`: compare two feasible approaches and recommend one; do not pad with an implausible alternative.
+- `--ci`: retrieve the supplied Actions job logs through host GitHub capabilities or `gh`, inspect workflow/configuration and identify the observed failure before planning repairs. Compare feasible repairs and recommend one; record unavailable logs as a limitation. Do not implement fixes during this mode.
+- `--cro`: plan improvements to website conversion based on the supplied page and evidence.
+
+Create research/report directories only for artifacts actually produced. Leave implementation to the subsequent authorized task. Hand off the overview path, phase order, assumptions and unresolved questions.

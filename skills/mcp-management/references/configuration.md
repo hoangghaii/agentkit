@@ -2,7 +2,9 @@
 
 ## Configuration File Structure
 
-MCP servers are configured in `.mcp.json`:
+The JSON examples below apply to Claude project servers in root `.mcp.json`. Codex uses `[mcp_servers.<name>]` tables in `.codex/config.toml`; use the appropriate optional kit template rather than sharing one host’s configuration with another.
+
+Claude example:
 
 ```json
 {
@@ -96,19 +98,8 @@ Reference env vars with `${VAR_NAME}` syntax:
 }
 ```
 
-## Configuration Loading Order
+## Credentials and configuration ownership
 
-Scripts check for config in this order:
+The active host reads MCP configuration and manages the server lifecycle. This skill does not ship a standalone client or a second configuration loader. Do not assume a host automatically reads project `.env` files; use that host’s supported environment/auth configuration. Keep real values outside committed templates.
 
-1. `process.env` (runtime environment)
-2. `./.env`
-3. `skills/.env`
-4. `.claude/.env`
-
-## Validation
-
-Config must:
-- Be valid JSON
-- Include `mcpServers` object
-- Each server must have `command` and `args`
-- `env` is optional but must be object if present
+For Claude, validate the JSON `mcpServers` object. A stdio entry uses `command` and appropriate `args`; a remote HTTP entry uses its supported `type` and `url`. Codex entries must follow its TOML schema. Server-specific auth and environment variables are optional unless that selected service requires them.

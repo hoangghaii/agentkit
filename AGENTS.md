@@ -8,6 +8,17 @@ Preserve project instructions, user edits and existing configuration. Keep chang
 
 Codex workflows are invoked with `$kit-plan`, `$kit-implement`, `$kit-debug`, `$kit-fix`, `$kit-test` and `$kit-review`. Claude also supports the installed command aliases. Use `$kit-tdd` when TDD is selected and the quality pack is installed. Record concrete evidence and remaining risks in handoffs.
 
+When asked to create an implementation plan, use `kit-plan` and the `planning` skill. Persist a `plan.md` overview and separate `phase-NN-<name>.md` files under `plans/YYYYMMDD-HHmm-<topic>/`, unless the user requests inline-only output. A read-only planner hands off file contents to the coordinating agent for writing and verification.
+
+
+For substantial work, read the applicable workflow references: installed copies live in `.agentkit/workflows/`, with canonical source in `workflows/`. Preserve command boundaries: brainstorm compares options, debug diagnoses, and test runs/reports checks by default. Apply repairs only within an implementation request. When executing a supplied plan, read its phase files and update statuses from verified acceptance evidence; reconcile affected existing documentation where needed.
+
+## Engineering principles
+
+- **YAGNI (You Aren't Gonna Need It):** Implement the current requirements; avoid speculative features, dependencies and abstractions.
+- **KISS (Keep It Simple, Stupid):** Prefer the simplest clear solution that satisfies the requirements; add complexity only when justified.
+- **DRY (Don't Repeat Yourself):** Reuse established logic and keep one source of truth. Extract shared code when duplication reflects the same responsibility; avoid premature abstractions.
+
 ## Source maintenance
 
 Read README.md and canonical workflows/ before implementation. Edit skills/, agents/, workflows/ and hooks/; regenerate previews with `node scripts/generate.mjs`. Run `npm run lint`, `npm test` and `npm run check:sync` before delivery. Required reviewer pass may run independently when available.

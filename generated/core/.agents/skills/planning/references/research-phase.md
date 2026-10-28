@@ -5,10 +5,10 @@
 
 ## Core Activities
 
-### Parallel Researcher Agents
-- Spawn multiple `researcher` agents in parallel to investigate different approaches
-- Wait for all researcher agents to report back before proceeding
-- Each researcher investigates a specific aspect or approach
+### Research Scope
+- Research only uncertainty that affects the requested plan; a small, understood task may need no external research.
+- Use host-native tools directly. Delegate substantial independent questions to researchers only when delegation is available and useful; otherwise work sequentially.
+- Integrate required research results before deciding the approach.
 
 ### Sequential Thinking
 - Use `sequential-thinking` skill for dynamic and reflective problem-solving
@@ -28,16 +28,16 @@
 - Extract relevant technical context from GitHub resources
 
 ### Remote Repository Analysis
-When given GitHub repository URL, generate fresh codebase summary:
+When a supplied repository needs a summary and Repomix is available, it can be used optionally:
 ```bash
 # usage: 
 repomix --remote <github-repo-url>
-# example: 
-repomix --remote 
+# example:
+repomix --remote https://github.com/upstash/context7
 ```
 
 ### Debugger Delegation
-- Delegate to `debugger` agent for root cause analysis
+- Delegate substantial diagnostic work to `debugger` when available; investigate directly otherwise
 - Use when investigating complex issues or bugs
 - Debugger agent specializes in diagnostic tasks
 

@@ -46,7 +46,12 @@ export function validate(root=ROOT) {
   }
   const commands=readJSON(path.join(root,'kit/commands.json'));
   if(commands.length!==53||new Set(commands.map(c=>c.alias)).size!==53)errors.push('Expected mapping for 53 unique legacy commands');
-  for(const c of commands)if(!known.has(c.workflow))errors.push(`Missing workflow ${c.workflow}`);
+  for(const c of commands) {
+    if(!known.has(c.workflow)){errors.push(`Missing workflow ${c.workflow}`);continue;}
+    const entry=fs.readFileSync(path.join(root,'skills',c.workflow,'SKILL.md'),'utf8');
+    for(const mode of c.arguments.split(/\s+/).filter(Boolean))if(!entry.includes(mode))errors.push(`Undefined mode ${mode} for ${c.alias}`);
+    if(!packs[c.pack]?.includes(c.workflow))errors.push(`Alias ${c.alias} is not installed with its workflow pack`);
+  }
   const cases=readJSON(path.join(root,'kit/trigger-cases.json'));
   for(const name of known)if(!cases[name]||cases[name].positive?.length<2||cases[name].negative?.length<2)errors.push(`Missing trigger scenarios ${name}`);
   for(const u of readJSON(path.join(root,'kit/upstreams.json'))) {

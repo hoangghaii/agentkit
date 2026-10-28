@@ -28,6 +28,7 @@ export function writeAtomic(p, data) {
 }
 export function select(packs, agents) {
   const catalog = readJSON(path.join(ROOT,'kit/packs.json'));
+  if(!agents.length)throw new Error('Select at least one target agent with --agents codex,claude');
   for (const p of packs) if (!catalog[p]) throw new Error(`Unknown pack: ${p}`);
   for (const a of agents) if (!['codex','claude'].includes(a)) throw new Error(`Unknown agent: ${a}`);
   return {packs: [...new Set(['core', ...packs])], agents: [...new Set(agents)], catalog};

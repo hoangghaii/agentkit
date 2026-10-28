@@ -27,15 +27,25 @@ Codex loads skills from `.agents/skills/`, roles from `.codex/agents/` and hooks
 
 Use `$kit-plan`, `$kit-implement`, `$kit-debug`, `$kit-fix`, `$kit-test` and `$kit-review` in Codex. Claude retains the mapped command aliases such as `/plan`, `/cook` and `/fix:ci`. Small tasks run directly; substantial work can use planner, tester and reviewer roles. Roles inherit the session model; unavailable delegation falls back to sequential work.
 
+Public aliases preserve distinct modes: `/brainstorm` compares options without creating implementation phases; `/plan` writes a multi-file plan; `/code` follows a supplied plan; `/cook` implements a feature; `/bootstrap` initializes a new project. `/debug` and `/test` investigate/run checks without automatic repairs. `/journal` writes an engineering journal, while `/watzup` reports status. See [all alias modes](guide/COMMANDS.md).
+
+When following a plan, the coordinator updates phase TODOs and the overview only after acceptance checks pass. Read-only roles provide evidence and proposed edits; they do not claim to have written plan or application files.
+
 Canonical source lives in `skills/`, `agents/`, `workflows/` and `hooks/`. `kit/` contains packs, provenance, mappings and trigger scenarios. `generated/core/` is a reproducible preview of default installation; edit canonical source and run `node scripts/generate.mjs` to refresh it. OpenCode files are retained as cleaned legacy material and are outside the supported installation matrix.
 
 ```sh
 npm test
 npm run lint
 npm run check:sync
+# Optional Python helper regressions (Python 3 required)
+npm run test:python
 npm run build
 ```
 
 The build produces `dist/agentkit-engineer.zip` and a SHA-256 checksum. Extract it, run `npm ci` in the extracted directory, then use the same CLI. Build excludes caches, real environment files, coverage and nested archives. Source and dependency provenance are in [the inventory](docs/inventory.md) and [upstream lock](kit/upstreams.json). Existing document-specific terms remain bundled with those skills; the root license does not replace them. Imported snapshots are hash-checked; run `node scripts/lock-upstreams.mjs --refresh` only after reviewing local adaptations.
 
 Read [the Vietnamese guide](guide/README.vi.md), [migration notes](docs/migration.md), [hook behavior](hooks/README.md) and [verification report](docs/verification.md). Host documentation checked for the adapters: [skills](https://learn.chatgpt.com/docs/build-skills), [agents](https://learn.chatgpt.com/docs/agent-configuration/subagents), [hooks](https://learn.chatgpt.com/docs/hooks). New OpenAI integrations should use [OpenAI Plugins](https://github.com/openai/plugins).
+
+The source repository’s `.husky/commit-msg` validates source and conventional commit headers when enabled via `core.hooksPath`. It is not installed into target projects by the kit installer.
+
+See the [restoration audit](docs/reverification-2026-10-28.md) for recovered behavior, expanded checks and historical comparison limits.

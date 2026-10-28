@@ -12,8 +12,10 @@
     ],
     "files": {
       "AGENTS.md": "ce68d80fe31809dcca2a3ce4bb0c8fea9cd391a2af5789d06878509629d62938",
-      "metadata.json": "c4e18bac3290fbe1b471a605867d4df68b03144ea26b8befdbe8f9d8fd124354",
       "README.md": "f5f2ad0df83cda0d1bb4dbcf863e07a791d99c0b16964f7abec0a7553ff4d932",
+      "SKILL.md": "563525eef518588177e26ec3ff5d8047d3c9f1ac33f3028727d467d94f8b25e9",
+      "UPSTREAM-NOTICE.md": "936e6d75db4f73f2abadc5e8fb647225ed7d4157968066e341bf640a939b3e92",
+      "metadata.json": "c4e18bac3290fbe1b471a605867d4df68b03144ea26b8befdbe8f9d8fd124354",
       "rules/_sections.md": "01c59969e4e867f0708c8f8ef9c6d87fab9a07d0586244f429ff84013db8a115",
       "rules/_template.md": "99df2a3ea088c6c22de2484ddc7e964d0e9923846f44c63380343ecc64455442",
       "rules/advanced-effect-event-deps.md": "55ed8f9f27a1bff803d6fa55828176207714b02123cbb97ddb8a90d88024a723",
@@ -85,9 +87,7 @@
       "rules/server-no-shared-module-state.md": "4d869bf1cd2f1632e5ca4c0e64b1cf0e71c5f5a0f940bc8a22174d205e735ed7",
       "rules/server-parallel-fetching.md": "569a2e9fc04f9606686cd75c5894ef8781b502786a7fffe241396846c7733472",
       "rules/server-parallel-nested-fetching.md": "ad5d9656984d4a959997a2367bf59cc6632297b4634a1dd13a087939d83f30b3",
-      "rules/server-serialization.md": "f4c7d68b29c82381baad059c4a7f09e868e71ec9c3115a26ad3ae7d24c0dfe1f",
-      "SKILL.md": "563525eef518588177e26ec3ff5d8047d3c9f1ac33f3028727d467d94f8b25e9",
-      "UPSTREAM-NOTICE.md": "936e6d75db4f73f2abadc5e8fb647225ed7d4157968066e341bf640a939b3e92"
+      "rules/server-serialization.md": "f4c7d68b29c82381baad059c4a7f09e868e71ec9c3115a26ad3ae7d24c0dfe1f"
     }
   },
   {
@@ -103,8 +103,10 @@
     ],
     "files": {
       "AGENTS.md": "89e3ddd58fcf99a53a50e25dfd21b8cde1be5f10b7df6bacd3dfa6796932f516",
-      "metadata.json": "49262ed5cb4186f31ee980cf8d990be0170c51efed4908d0464a1cff9905bd05",
       "README.md": "85915a43a6f0b4efe525e3cf6398dd866166da2025837c4460468a24a940da94",
+      "SKILL.md": "f6ef8b667cbafd10cf91519ad31e32dd1ed504a563734acaee51e134247ab4b0",
+      "UPSTREAM-NOTICE.md": "936e6d75db4f73f2abadc5e8fb647225ed7d4157968066e341bf640a939b3e92",
+      "metadata.json": "49262ed5cb4186f31ee980cf8d990be0170c51efed4908d0464a1cff9905bd05",
       "rules/_sections.md": "a174213b87e6911e2b766995a2cbaf8d1534057076e82fb79fe3f0ecb38047df",
       "rules/_template.md": "587f7d16b0660eb61fee4a4d3d7df2b3077d6835de170602c7d6e60bee559131",
       "rules/architecture-avoid-boolean-props.md": "007555ebb020f4d552582a2c4db194db71a1fd33094012e5187bcfa4f8c392d5",
@@ -114,9 +116,7 @@
       "rules/react19-no-forwardref.md": "881830adb7534c4b2d70db426556646ad9837f5478f744f35641f635ada22227",
       "rules/state-context-interface.md": "09e73afbf9285fa416679cc864a287b9e8b821d0969272ab784295386d8c9bc3",
       "rules/state-decouple-implementation.md": "76a8c1eb29a70d8996ab3f71260345af2f7bc89deab815a421d6c87c6591a9c3",
-      "rules/state-lift-state.md": "74c54038a6c554c748fe31cec673b80861b5d920b7553cf78cdf10d18b4b759b",
-      "SKILL.md": "f6ef8b667cbafd10cf91519ad31e32dd1ed504a563734acaee51e134247ab4b0",
-      "UPSTREAM-NOTICE.md": "936e6d75db4f73f2abadc5e8fb647225ed7d4157968066e341bf640a939b3e92"
+      "rules/state-lift-state.md": "74c54038a6c554c748fe31cec673b80861b5d920b7553cf78cdf10d18b4b759b"
     }
   },
   {
@@ -139,9 +139,9 @@
       }
     ],
     "files": {
-      "references/guidelines.md": "d246b026f4f29b5823a9cc857f9edf3d2507002e055e32040cadeaf3b38e0234",
       "SKILL.md": "922b2da949c6d74b1136a4d45118ca49772e9677f2ad0e17f231f1f91ca7bfbe",
-      "UPSTREAM-NOTICE.md": "936e6d75db4f73f2abadc5e8fb647225ed7d4157968066e341bf640a939b3e92"
+      "UPSTREAM-NOTICE.md": "936e6d75db4f73f2abadc5e8fb647225ed7d4157968066e341bf640a939b3e92",
+      "references/guidelines.md": "d246b026f4f29b5823a9cc857f9edf3d2507002e055e32040cadeaf3b38e0234"
     }
   },
   {
@@ -153,15 +153,16 @@
     "changes": [
       "Normalize discovery metadata and host tools",
       "Remove out-of-scope examples",
-      "Use deterministic UI readiness where applicable"
+      "Use deterministic UI readiness where applicable",
+      "Isolate and terminate owned server process trees, spool output and verify port ownership/readiness"
     ],
     "files": {
+      "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+      "SKILL.md": "c6482807955ff3af08090bc0f876e71a9d259df494b0b8a986d2433ca0c63314",
       "examples/console_logging.py": "45a10a4c40f07267b86525b75512a2b77948af68dabf3479be926d81ab25eed7",
       "examples/element_discovery.py": "fbf973d06d7a113ad9ff428883e0943f1492ae4a1b6d94c7195e0fa9301404f5",
       "examples/static_html_automation.py": "7705cec7b72fc27cc87759d21fcd3e44870ad6eecec21ae624ab823b9be2310d",
-      "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
-      "scripts/with_server.py": "b0dcf4918935b795f4eda9821579b9902119235ff4447f687a30286e7d0925fd",
-      "SKILL.md": "c6482807955ff3af08090bc0f876e71a9d259df494b0b8a986d2433ca0c63314"
+      "scripts/with_server.py": "3bf642bf5b6ab73d742185f1c50ab8f8817e419463541e947b45d1aecdd85f2b"
     }
   },
   {
@@ -177,6 +178,8 @@
     ],
     "files": {
       "CHANGELOG.md": "751ad110037c85d400018c9894716a04fa46357ff55c22b1169b280752e19e88",
+      "SKILL.md": "259734aa27a1e4040f602024f848f11453ad8de084fbd99c152f7ff8ad722f3b",
+      "UPSTREAM-LICENSE.txt": "b65e575eb4f04a13c187d64e958321298e2ab84d67aa8428819f362056ba292c",
       "references/_contributing.md": "191e039e7d94764e6073410b513b559f9a594e0fdf0252a30c2a2986df2ab3bc",
       "references/_sections.md": "c9e992612b422c7122de0b7542ebc2450db283edaab08cfe86c6d657fcccccd5",
       "references/_template.md": "6299954250f212caabe339d752c3e5313a8e07d1a182a4e4b425baee91df1bd2",
@@ -210,9 +213,7 @@
       "references/schema-primary-keys.md": "3c8beabef82066f9a0838b926da0885117fd2d9a263aaf84cb5ca9e5f0d400e9",
       "references/security-privileges.md": "095909274a4fb43df785d7144cf674eeb40284d2d45628f14af4108737b93663",
       "references/security-rls-basics.md": "e04dd1a3a382aafdaaa73fe9f7976352acdde6e90c2a2470d281b94d4f44b096",
-      "references/security-rls-performance.md": "2e1faeca7d5746e246b1c78f9492fe2a9cfa41c4d7fa1e23c402d58fa18ea014",
-      "SKILL.md": "259734aa27a1e4040f602024f848f11453ad8de084fbd99c152f7ff8ad722f3b",
-      "UPSTREAM-LICENSE.txt": "b65e575eb4f04a13c187d64e958321298e2ab84d67aa8428819f362056ba292c"
+      "references/security-rls-performance.md": "2e1faeca7d5746e246b1c78f9492fe2a9cfa41c4d7fa1e23c402d58fa18ea014"
     }
   },
   {
@@ -227,9 +228,9 @@
       "Use deterministic UI readiness where applicable"
     ],
     "files": {
-      "references/guide.md": "5ff1e520baddaca14516fdbb011aca5fef69bae45e7bfd040d7b7ea863f56bd4",
       "SKILL.md": "27fab1366094d41932d7b9213e3c100e9d3c4aace8b104e64552718bc53370d7",
       "UPSTREAM-LICENSE.txt": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+      "references/guide.md": "5ff1e520baddaca14516fdbb011aca5fef69bae45e7bfd040d7b7ea863f56bd4",
       "writing-good-tests.md": "51471c853306ff92ca8bb41dcaea05f31c0e46b03651f8f3c99754b7172f4ae1"
     }
   }

@@ -19,16 +19,66 @@ import socket
 import time
 import sys
 import argparse
+import os
+import signal
+import tempfile
 
-def is_server_ready(port, timeout=30):
-    """Wait for server to be ready by polling the port."""
-    start_time = time.time()
-    while time.time() - start_time < timeout:
+
+def start_server(command):
+    """Isolate the process tree and spool output without filling unread pipes."""
+    output = tempfile.TemporaryFile()
+    options = {'creationflags': subprocess.CREATE_NEW_PROCESS_GROUP} if os.name == 'nt' else {'start_new_session': True}
+    try:
+        process = subprocess.Popen(command, shell=True, stdout=output, stderr=subprocess.STDOUT, **options)
+    except BaseException:
+        output.close()
+        raise
+    return process, output
+
+
+def stop_server(process):
+    """Terminate the whole owned tree, including children that ignore TERM."""
+    if os.name == 'nt':
+        subprocess.run(['taskkill', '/PID', str(process.pid), '/T', '/F'],
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=False)
         try:
-            with socket.create_connection(('localhost', port), timeout=1):
-                return True
-        except (socket.error, ConnectionRefusedError):
-            time.sleep(0.5)
+            process.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            process.kill()
+            process.wait()
+        return
+    try:
+        os.killpg(process.pid, signal.SIGTERM)
+    except ProcessLookupError:
+        pass
+    try:
+        process.wait(timeout=5)
+    except subprocess.TimeoutExpired:
+        pass
+    finally:
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+        process.wait()
+
+def is_port_open(port):
+    try:
+        with socket.create_connection(('localhost', port), timeout=0.2):
+            return True
+    except OSError:
+        return False
+
+
+def is_server_ready(port, timeout=30, process=None):
+    """Wait for server to be ready by polling the port."""
+    start_time = time.monotonic()
+    while time.monotonic() - start_time < timeout:
+        if process is not None and process.poll() is not None:
+            return False
+        if is_port_open(port):
+            return process is None or process.poll() is None
+        time.sleep(0.5)
     return False
 
 
@@ -53,6 +103,13 @@ def main():
     if len(args.servers) != len(args.ports):
         print("Error: Number of --server and --port arguments must match")
         sys.exit(1)
+    if len(set(args.ports)) != len(args.ports) or any(not 0 < port < 65536 for port in args.ports):
+        parser.error('Server ports must be unique and in the range 1..65535')
+    if args.timeout <= 0:
+        parser.error('Timeout must be positive')
+    for port in args.ports:
+        if is_port_open(port):
+            parser.error(f'Port {port} is already in use; refusing to test an unrelated service')
 
     servers = []
     for cmd, port in zip(args.servers, args.ports):
@@ -66,17 +123,12 @@ def main():
             print(f"Starting server {i+1}/{len(servers)}: {server['cmd']}")
 
             # Use shell=True to support commands with cd and &&
-            process = subprocess.Popen(
-                server['cmd'],
-                shell=True,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE
-            )
-            server_processes.append(process)
+            process, output = start_server(server['cmd'])
+            server_processes.append((process, output))
 
             # Wait for this server to be ready
             print(f"Waiting for server on port {server['port']}...")
-            if not is_server_ready(server['port'], timeout=args.timeout):
+            if not is_server_ready(server['port'], timeout=args.timeout, process=process):
                 raise RuntimeError(f"Server failed to start on port {server['port']} within {args.timeout}s")
 
             print(f"Server ready on port {server['port']}")
@@ -91,13 +143,11 @@ def main():
     finally:
         # Clean up all servers
         print(f"\nStopping {len(server_processes)} server(s)...")
-        for i, process in enumerate(server_processes):
+        for i, (process, output) in enumerate(server_processes):
             try:
-                process.terminate()
-                process.wait(timeout=5)
-            except subprocess.TimeoutExpired:
-                process.kill()
-                process.wait()
+                stop_server(process)
+            finally:
+                output.close()
             print(f"Server {i+1} stopped")
         print("All servers stopped")
 

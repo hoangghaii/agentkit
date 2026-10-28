@@ -5,6 +5,12 @@ description: "Summarize project progress or record an engineering work journal."
 
 # kit-status
 
-Inspect actual changes and checks. Report completed behavior, remaining work, blockers and risks. --journal records decisions and outcomes when requested. Keep timestamps accurate and do not invent completed milestones.
+## Default status: /watzup
 
-Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
+Inspect the current branch, working-tree changes, recent commits, relevant active plan and available check results. Summarize completed behavior, pending phases, blockers and next steps. Status is read-only by default: do not invent progress percentages or create journal files merely to answer a status request. If Git is unavailable, use the available source and state that limitation.
+
+## Journal: --journal
+
+Record the actual task context, decisions, completed work, verification evidence, problems and remaining work. Follow the project's journal convention; otherwise write `docs/journals/YYYYMMDD-journal.md` using the current local date. Append to the existing day's entry without replacing unrelated content. Do not invent personal experiences, emotion, tests or outcomes. Return the saved path; if writing is unavailable, disclose that and provide the proposed entry for handoff.
+
+Preserve user scope and existing instructions. Only update a plan's status when requested or as part of delivering its verified work.

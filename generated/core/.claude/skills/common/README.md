@@ -20,7 +20,7 @@ sys.path.insert(0, str(common_dir))
 from api_key_helper import get_api_key_or_exit
 
 # Get API key with automatic error handling
-api_key = get_api_key_or_exit()
+api_key = get_api_key_or_exit(Path(__file__).resolve().parent.parent)
 ```
 
 ### API Key Lookup Order
@@ -42,7 +42,7 @@ The helper checks for `GEMINI_API_KEY` in this order:
    echo 'GEMINI_API_KEY=your-api-key' > .claude/.env
    ```
 
-4. **skills/.env file** (shared across all Gemini skills)
+4. **Installed skills-root `.env` file** (shared across sibling skills; `.agents/skills/`, `.claude/skills/` or canonical `skills/`)
    ```bash
    echo 'GEMINI_API_KEY=your-api-key' > skills/.env
    ```

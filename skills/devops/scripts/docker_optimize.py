@@ -6,9 +6,9 @@ Analyzes Dockerfiles for optimization opportunities including multi-stage builds
 security issues, size reduction, and best practices.
 
 Usage:
-    python docker-optimize.py Dockerfile
-    python docker-optimize.py --json Dockerfile
-    python docker-optimize.py --verbose Dockerfile
+    python docker_optimize.py Dockerfile
+    python docker_optimize.py --json Dockerfile
+    python docker_optimize.py --verbose Dockerfile
 """
 
 import argparse
@@ -56,11 +56,19 @@ class DockerfileAnalyzer:
 
     def analyze_base_image(self) -> None:
         """Check base image for optimization opportunities."""
+        stages = set()
         for i, line in enumerate(self.lines, 1):
             line = line.strip()
-            if line.startswith('FROM'):
-                # Check for 'latest' tag
-                if ':latest' in line or (': ' not in line and 'AS' not in line and '@' not in line):
+            match = re.match(r'^FROM\s+(?:--\S+\s+)*(\S+)(?:\s+AS\s+(\S+))?', line, re.IGNORECASE)
+            if match:
+                image, alias = match.groups()
+                is_stage = image.lower() in stages
+                if alias:
+                    stages.add(alias.lower())
+                # A registry port is not an image tag; stage references and scratch need no tag.
+                last_component = image.rsplit('/', 1)[-1]
+                unpinned = ':' not in last_component or last_component.rsplit(':', 1)[-1] == 'latest'
+                if not is_stage and image != 'scratch' and '@' not in image and unpinned:
                     self.issues.append({
                         'line': i,
                         'severity': 'warning',
@@ -169,7 +177,7 @@ class DockerfileAnalyzer:
         consecutive_runs = 0
         first_run_line = 0
 
-        for i, line in enumerate(self.lines, 1):
+        for i, line in enumerate([*self.lines, ''], 1):
             if line.strip().startswith('RUN'):
                 if consecutive_runs == 0:
                     first_run_line = i

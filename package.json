@@ -14,7 +14,8 @@
     "check:sync": "node scripts/generate.mjs --check",
     "test:documents": "python3 scripts/document-smoke.py",
     "test:archive": "python3 scripts/archive-smoke.py",
-    "test:browser": "python3 scripts/browser-smoke.py"
+    "test:browser": "python3 scripts/browser-smoke.py",
+    "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'"
   },
   "license": "MIT",
   "files": [
@@ -35,7 +36,9 @@
     "LICENSE",
     "THIRD_PARTY_NOTICES.md",
     "tests",
-    "generated"
+    "generated",
+    ".commitlintrc.json",
+    ".husky"
   ],
   "dependencies": {
     "smol-toml": "1.9.1",

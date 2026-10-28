@@ -251,16 +251,16 @@ jobs:
 
 Python utilities in `scripts/` directory:
 
-**nextjs-init.py** - Initialize Next.js project with best practices
-**turborepo-migrate.py** - Convert existing monorepo to Turborepo
+**nextjs_init.py** - Initialize Next.js project with best practices
+**turborepo_migrate.py** - Convert existing monorepo to Turborepo
 
 Usage examples:
 ```bash
 # Initialize new Next.js app with TypeScript and recommended setup
-python scripts/nextjs-init.py --name my-app --typescript --app-router
+python scripts/nextjs_init.py my-app
 
 # Migrate existing monorepo to Turborepo with dry-run
-python scripts/turborepo-migrate.py --path ./my-monorepo --dry-run
+python scripts/turborepo_migrate.py --path ./my-monorepo --dry-run
 
 # Run tests
 cd scripts/tests

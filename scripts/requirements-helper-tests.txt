@@ -1,0 +1,5 @@
+-r requirements-documents.txt
+python-dotenv==1.2.4
+google-genai==2.33.0
+pymongo==4.19.0
+psycopg2-binary==2.9.13

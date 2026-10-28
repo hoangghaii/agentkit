@@ -5,6 +5,8 @@ description: "Run or design verification for a code change and report concrete r
 
 # kit-test
 
-Inspect project test commands and the changed behavior. Run the smallest meaningful checks, then expand if failures or risks justify it. Do not write tests that only mirror implementation wording. Report executed commands, failures and untested behavior. Never turn skipped checks into a passing claim.
+Inspect the requested behavior, diff and actual project test commands. By default run checks and report; do not edit application code, tests or snapshots to make a failure disappear. Repairs require a requested fix or another explicit implementation scope.
 
-Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
+Choose checks relevant to the change: normal/error/boundary cases, regression reproduction, flaky-test isolation, setup/cleanup, type checking, build and applicable integration/browser or performance requirements. Inspect coverage where it helps assess a concrete risk; do not impose a blanket percentage or introduce a new framework unnecessarily.
+
+Run the smallest meaningful checks, then expand when failures or material risks justify it. Report commands, observed outcomes, reproducible failures, relevant coverage gaps and untested assumptions. Distinguish missing dependencies and skipped checks from success. For a failed plan acceptance criterion, leave its phase pending and hand the evidence to the coordinator. Use the tester role for substantial verification if available; otherwise work sequentially.

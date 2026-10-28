@@ -153,8 +153,8 @@ See: `references/gcloud-platform.md`
 - `gcloud-services.md` - Compute Engine, GKE, Cloud Run, App Engine
 
 ### Python Utilities
-- `scripts/cloudflare-deploy.py` - Automate Cloudflare Worker deployments
-- `scripts/docker-optimize.py` - Analyze and optimize Dockerfiles
+- `scripts/cloudflare_deploy.py` - Automate Cloudflare Worker deployments
+- `scripts/docker_optimize.py` - Analyze and optimize Dockerfiles
 
 ## Common Workflows
 

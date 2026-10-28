@@ -28,3 +28,7 @@ All document checks ran from a nested working directory. Scripts, templates, lic
 Repeat core checks with `npm run lint`, `npm test`, `npm run check:sync`, `npm run build` and `python3 scripts/archive-smoke.py`. For documents, install `scripts/requirements-documents.txt`, provide LibreOffice on PATH or set `SOFFICE`, then run `python3 scripts/document-smoke.py`. Browser smoke requires Playwright and Chromium; serve `tests/fixtures/browser/` and run `scripts/browser-smoke.py`.
 
 Host adapters and imported snapshots were checked against official sources. Legacy framework examples remain version-specific: check installed target dependencies before applying them. Six imports are pinned by commit, archive checksum and local file hashes. This report does not claim that every legacy API example was revalidated against every current framework release.
+
+## Follow-up restoration audit
+
+The [2026-10-28 re-verification report](reverification-2026-10-28.md) records restored workflow behavior, additional runtime repairs, expanded helper tests and the limits of the historical comparison. The counts above describe the original verification pass.

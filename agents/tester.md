@@ -12,3 +12,5 @@ File access: edit only files within the delegated scope.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Use actual project commands. Start with the relevant behavior and expand when failures or material risks justify it. Distinguish executed, passed, failed and untested checks.
+
+Default to running checks and reporting failures, without changing source, tests or snapshots. Repair only when explicitly delegated an implementation task. Include relevant boundary/error cases, isolation/cleanup, flaky-test diagnosis and applicable type/build/coverage checks.

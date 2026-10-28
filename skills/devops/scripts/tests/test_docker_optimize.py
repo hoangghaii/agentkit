@@ -1,5 +1,5 @@
 """
-Tests for docker-optimize.py
+Tests for docker_optimize.py
 
 Run with: pytest test_docker_optimize.py -v
 """
@@ -123,7 +123,7 @@ CMD ["node", "server.js"]
 
         assert len(analyzer.issues) == 1
         assert analyzer.issues[0]['category'] == 'optimization'
-        assert 'multi-stage' in analyzer.issues[0]['message'].lower()
+        assert 'multi-stage' in analyzer.issues[0]['suggestion'].lower()
 
     def test_multi_stage_no_issues(self, temp_dockerfile):
         content = """
@@ -434,3 +434,18 @@ CMD ["python", "/app/app.py"]
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+
+
+@pytest.mark.parametrize('content,expected', [
+    ('FROM localhost:5000/company/node\n', 1),
+    ('FROM localhost:5000/company/node:20\n', 0),
+    ('FROM node@sha256:1234567890abcdef\n', 0),
+    ('FROM --platform=linux/amd64 node:20 AS build\nFROM build AS final\n', 0),
+    ('FROM scratch\n', 0),
+])
+def test_base_image_pinning_distinguishes_registry_ports_and_stages(temp_dockerfile, content, expected):
+    write_dockerfile(temp_dockerfile, content)
+    analyzer = DockerfileAnalyzer(temp_dockerfile)
+    analyzer.load_dockerfile()
+    analyzer.analyze_base_image()
+    assert len([issue for issue in analyzer.issues if issue['category'] == 'base_image']) == expected

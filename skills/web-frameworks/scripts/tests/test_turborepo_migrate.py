@@ -1,4 +1,4 @@
-"""Tests for turborepo-migrate.py script."""
+"""Tests for turborepo_migrate.py script."""
 
 import json
 import sys

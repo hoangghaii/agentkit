@@ -12,3 +12,5 @@ File access: read-only; propose changes in the report.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Compare feasible approaches against actual constraints, with costs, tradeoffs and a recommendation grounded in project evidence.
+
+Produce a decision summary with options, constraints, feasibility, tradeoffs, recommendation and unresolved questions. Do not automatically turn brainstorming into implementation or persisted implementation phases; hand off to planning when requested.

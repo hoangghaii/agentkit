@@ -5,6 +5,8 @@ description: "Investigate a bug, build failure or unexpected behavior using repr
 
 # kit-debug
 
-Reproduce the failure, collect relevant logs and identify the failing boundary. Form a falsifiable root cause hypothesis. Inspect inputs and state, then implement or propose a targeted fix according to scope. Rerun the reproduction and relevant regression checks. Report observed results, not assumed success.
+Investigate and report by default. Read the supplied issue, logs and affected paths, reproduce the failure when possible, and form a falsifiable root-cause hypothesis. Trace inputs, state and boundaries; distinguish observations from assumptions.
 
-Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
+Use `debugger` for substantial diagnostic work when available, or investigate directly. Return the reproduction, evidence, root cause, affected files, proposed correction and a verification plan. If a read-only role cannot obtain runtime/log evidence, the coordinator gathers it and supplies the result.
+
+Do not edit application code, configuration or tests merely because `/debug` was invoked. Apply repairs through `kit-fix` or an explicit user request to investigate and fix; the coordinating agent performs authorized edits after diagnosis. Do not use network/service credentials unless the task needs that capability.

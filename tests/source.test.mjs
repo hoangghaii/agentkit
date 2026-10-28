@@ -24,8 +24,11 @@ test('every selected skill and all 16 roles render into both native formats',()=
     const codex=toml(files.get(`.codex/agents/${role.name}.toml`).data.toString());assert.equal(codex.model,undefined);
     const claude=files.get(`.claude/agents/${role.name}.md`).data.toString();assert.doesNotMatch(claude,/^model:/m);
     if(role.readOnly) {
-      const expected=['researcher','scout-external'].includes(role.name)?'Read, Grep, Glob, WebSearch, WebFetch':'Read, Grep, Glob';
-      assert.ok(claude.includes(`tools: ${expected}\n`));
+      const metadata=yaml(claude.match(/^---\n([\s\S]*?)\n---\n/)[1]);
+      const tools=metadata.tools.split(', ');
+      assert.ok(!tools.includes('Write')&&!tools.includes('Edit'));
+      if(['code-reviewer','debugger'].includes(role.name))assert.ok(tools.includes('Bash'));
+      if(['researcher','scout-external','planner','brainstormer'].includes(role.name))assert.ok(tools.includes('WebSearch')&&tools.includes('WebFetch'));
     }
   }
 });
@@ -44,4 +47,15 @@ test('cleanup classifier rejects excluded identifiers and preserves technical la
   const {excludedContent}=await import('../scripts/validate.mjs');
   for(const encoded of ['RHV5IE5ndXnhu4Vu','RElTQ09SRA==','aHR0cHM6Ly94LmNvbS9leGFtcGxl'])assert.equal(excludedContent(Buffer.from(encoded,'base64').toString()),true);
   for(const value of ['x','notification','payment webhook notification','MCP notifications/tools/list_changed','mobile push notification'])assert.equal(excludedContent(value),false);
+});
+test('public aliases preserve distinct task modes in installed commands',()=>{
+  const {files}=render(['core']);
+  const mode=alias=>files.get(`.claude/commands/${alias}.md`).data.toString().match(/Mode arguments: ([^\n]+)/)[1];
+  assert.equal(mode('brainstorm'),'--brainstorm.');
+  assert.equal(mode('plan'),'(default).');
+  assert.equal(mode('journal'),'--journal.');
+  assert.equal(mode('watzup'),'(default).');
+  assert.equal(mode('code'),'--from-plan.');
+  assert.equal(mode('cook'),'(default).');
+  assert.equal(mode('bootstrap/auto/fast'),'--bootstrap --auto --fast.');
 });

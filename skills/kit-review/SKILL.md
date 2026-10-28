@@ -8,3 +8,5 @@ description: "Review code changes or a codebase for correctness, security and re
 Read the diff and trace affected call paths. Review data handling, permissions, compatibility and error paths. Use file and line evidence. Report severity, a concrete failure scenario and a suggested correction. Avoid speculative findings. --codebase reviews architecture and priority risks beyond a diff. Review is read-only unless fixes are requested.
 
 Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
+
+When reviewing plan-driven work, compare the diff and check evidence against the relevant phase’s acceptance criteria and TODOs. Report incomplete work and proposed status corrections; the coordinator updates plan files. Request missing diff/log/test evidence from the coordinator when read-only tools cannot obtain it.

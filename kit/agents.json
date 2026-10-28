@@ -4,21 +4,40 @@
     "pack": "core",
     "readOnly": true,
     "decision": "revise",
-    "reason": "Explicit contract and inherited session model"
+    "reason": "Explicit contract and inherited session model",
+    "tools": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Bash"
+    ]
   },
   {
     "name": "scout-external",
     "pack": "core",
     "readOnly": true,
     "decision": "revise",
-    "reason": "Explicit contract and inherited session model"
+    "reason": "Explicit contract and inherited session model",
+    "tools": [
+      "Read",
+      "Grep",
+      "Glob",
+      "WebSearch",
+      "WebFetch"
+    ]
   },
   {
     "name": "debugger",
     "pack": "core",
-    "readOnly": false,
+    "readOnly": true,
     "decision": "revise",
-    "reason": "Explicit contract and inherited session model"
+    "reason": "Explicit contract and inherited session model",
+    "tools": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Bash"
+    ]
   },
   {
     "name": "mcp-manager",
@@ -39,7 +58,14 @@
     "pack": "core",
     "readOnly": true,
     "decision": "revise",
-    "reason": "Explicit contract and inherited session model"
+    "reason": "Explicit contract and inherited session model",
+    "tools": [
+      "Read",
+      "Grep",
+      "Glob",
+      "WebSearch",
+      "WebFetch"
+    ]
   },
   {
     "name": "project-manager",
@@ -74,7 +100,14 @@
     "pack": "core",
     "readOnly": true,
     "decision": "revise",
-    "reason": "Explicit contract and inherited session model"
+    "reason": "Explicit contract and inherited session model",
+    "tools": [
+      "Read",
+      "Grep",
+      "Glob",
+      "WebSearch",
+      "WebFetch"
+    ]
   },
   {
     "name": "docs-manager",
@@ -102,13 +135,25 @@
     "pack": "core",
     "readOnly": true,
     "decision": "revise",
-    "reason": "Explicit contract and inherited session model"
+    "reason": "Explicit contract and inherited session model",
+    "tools": [
+      "Read",
+      "Grep",
+      "Glob"
+    ]
   },
   {
     "name": "brainstormer",
     "pack": "core",
     "readOnly": true,
     "decision": "revise",
-    "reason": "Explicit contract and inherited session model"
+    "reason": "Explicit contract and inherited session model",
+    "tools": [
+      "Read",
+      "Grep",
+      "Glob",
+      "WebSearch",
+      "WebFetch"
+    ]
   }
 ]

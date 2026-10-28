@@ -58,7 +58,7 @@ function prepare(current, old, next) {
   const original=old?old.original:(current?raw:null);
   let result,fragment;
   if(type==='json') {
-    const parsed=raw?JSON.parse(raw):{};
+    const parsed=current!==null?JSON.parse(raw):{};
     let base=old?removeFragment(parsed,old.fragment):parsed;
     if(old&&original!==null)base=restoreEmptyContainers(base,JSON.parse(original),parsed);
     result=next?addFragment(base,JSON.parse(next.data)):base;
@@ -114,7 +114,10 @@ export function install(target, packs, agents, {dryRun=false, uninstall=false}={
         committed.push(a);
       }
       if(uninstall&&!Object.keys(entries).length) {if(fs.existsSync(mp))fs.unlinkSync(mp);}
-      else write(mp,JSON.stringify({schemaVersion:1,version:readJSON(new URL('../../package.json',import.meta.url)).version,packs:plan.packs,agents:plan.agents,files:entries},null,2)+'\n');
+      else {
+        const selection=uninstall?previous:plan;
+        write(mp,JSON.stringify({schemaVersion:1,version:readJSON(new URL('../../package.json',import.meta.url)).version,packs:selection.packs,agents:selection.agents,files:entries},null,2)+'\n');
+      }
     } catch(error) {
       for(const a of committed.reverse()) {
         const full=safe(target,a.rel);

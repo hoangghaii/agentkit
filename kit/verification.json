@@ -9,7 +9,13 @@
     "https://code.claude.com/docs/en/sub-agents",
     "https://github.com/openai/plugins",
     "https://www.skills.sh/",
-    "https://skillsmp.com/"
+    "https://skillsmp.com/",
+    "https://code.claude.com/docs/en/settings",
+    "https://code.claude.com/docs/en/skills",
+    "https://code.claude.com/docs/en/plugins",
+    "https://code.claude.com/docs/en/cli-reference",
+    "https://www.postgresql.org/docs/18/monitoring-stats.html"
   ],
-  "scope": "Host adapters and imported snapshots verified. Legacy framework references retain version-specific examples; check installed dependency versions before use."
+  "scope": "Host adapters and imported snapshots verified. Legacy framework references retain version-specific examples; check installed dependency versions before use.",
+  "reverifiedOn": "2026-10-28"
 }

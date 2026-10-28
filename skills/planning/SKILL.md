@@ -45,7 +45,7 @@ Load: `references/output-standards.md`
 ## Workflow Process
 
 1. **Initial Analysis** → Read codebase docs, understand context
-2. **Research Phase** → Spawn researchers, investigate approaches
+2. **Research Phase** → Investigate material uncertainties; delegate substantial independent questions only when useful and available
 3. **Synthesis** → Analyze reports, identify optimal solution
 4. **Design Phase** → Create architecture, implementation design
 5. **Plan Documentation** → Write comprehensive plan
@@ -54,11 +54,12 @@ Load: `references/output-standards.md`
 ## Output Requirements
 
 - DO NOT implement code - only create plans
-- Respond with plan file path and summary
+- Persist the overview and separate phase files unless the user requests inline-only output. In a read-only role, return per-file contents for the coordinating agent to write.
+- Respond with the actual plan file path and summary; distinguish proposed paths if writing was unavailable
 - Ensure self-contained plans with necessary context
 - Include code snippets/pseudocode when clarifying
 - Provide multiple options with trade-offs when appropriate
-- Fully respect the `./docs/development-rules.md` file.
+- Follow the project instructions and applicable development rules, including `workflows/development-rules.md` when present.
 
 **Plan Directory Structure**
 ```

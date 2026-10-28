@@ -4,7 +4,7 @@ import {ROOT,walk} from './lib/source.mjs';
 import {validate} from './validate.mjs';
 const result=validate();let failed=!result.ok;
 for(const issue of result.errors)console.error(issue);
-for(const folder of ['bin','scripts','hooks','tests'])for(const f of walk(path.join(ROOT,folder)).filter(f=>/\.(?:mjs|cjs)$/.test(f))) {
+for(const folder of ['bin','scripts','hooks','tests','skills','.claude'])for(const f of walk(path.join(ROOT,folder)).filter(f=>/\.(?:js|mjs|cjs)$/.test(f))) {
   const check=spawnSync(process.execPath,['--check',f],{encoding:'utf8'});
   if(check.status!==0){failed=true;console.error(check.stderr);}
 }

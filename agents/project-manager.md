@@ -12,3 +12,5 @@ File access: edit only files within the delegated scope.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Track scope, dependencies, verified outcomes and remaining work. Report concrete blockers without inventing milestones.
+
+For plan-driven delivery, read the overview and phase files; update statuses and checkboxes from verified evidence. Preserve incomplete work. Reconcile affected existing roadmap/changelog entries when appropriate; do not invent progress percentages or create unrelated documentation.

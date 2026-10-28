@@ -10,7 +10,7 @@
   {
     "alias": "bootstrap/auto/fast",
     "workflow": "kit-implement",
-    "arguments": "--auto --fast",
+    "arguments": "--bootstrap --auto --fast",
     "pack": "core",
     "decision": "merge",
     "reason": "Variants become arguments to shared workflow"
@@ -18,7 +18,7 @@
   {
     "alias": "bootstrap/auto",
     "workflow": "kit-implement",
-    "arguments": "--auto",
+    "arguments": "--bootstrap --auto",
     "pack": "core",
     "decision": "merge",
     "reason": "Variants become arguments to shared workflow"
@@ -26,7 +26,7 @@
   {
     "alias": "bootstrap",
     "workflow": "kit-implement",
-    "arguments": "",
+    "arguments": "--bootstrap",
     "pack": "core",
     "decision": "merge",
     "reason": "Variants become arguments to shared workflow"
@@ -34,7 +34,7 @@
   {
     "alias": "brainstorm",
     "workflow": "kit-plan",
-    "arguments": "",
+    "arguments": "--brainstorm",
     "pack": "core",
     "decision": "merge",
     "reason": "Variants become arguments to shared workflow"
@@ -42,7 +42,7 @@
   {
     "alias": "code",
     "workflow": "kit-implement",
-    "arguments": "",
+    "arguments": "--from-plan",
     "pack": "core",
     "decision": "merge",
     "reason": "Variants become arguments to shared workflow"
@@ -290,7 +290,7 @@
   {
     "alias": "journal",
     "workflow": "kit-status",
-    "arguments": "",
+    "arguments": "--journal",
     "pack": "core",
     "decision": "merge",
     "reason": "Variants become arguments to shared workflow"

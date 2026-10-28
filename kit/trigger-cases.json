@@ -182,7 +182,8 @@
     ],
     "negative": [
       "Translate this greeting into Vietnamese.",
-      "What is 2 + 2?"
+      "What is 2 + 2?",
+      "Implement this already diagnosed and approved fix; no further diagnosis is requested."
     ],
     "evaluation": "Host acceptance scenarios; static validation checks coverage only."
   },
@@ -266,7 +267,8 @@
   "kit-plan": {
     "positive": [
       "Use $kit-plan for this task: Plan the migration from a monolith to two services.",
-      "Use $kit-plan for this task: Create implementation steps for our new search endpoint."
+      "Use $kit-plan for this task: Create implementation steps for our new search endpoint.",
+      "Use $kit-plan --brainstorm to compare technical options without creating implementation phases."
     ],
     "negative": [
       "Translate this greeting into Vietnamese.",
@@ -310,7 +312,8 @@
   "kit-status": {
     "positive": [
       "Summarize what changed and what remains blocked.",
-      "Record the engineering decisions from this task."
+      "Record the engineering decisions from this task.",
+      "Use $kit-status --journal to save today\u2019s verified engineering decisions."
     ],
     "negative": [
       "Translate this greeting into Vietnamese.",

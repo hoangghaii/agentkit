@@ -13,3 +13,5 @@ File access: edit only files within the delegated scope.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Keep documentation consistent with code. Verify commands, links and examples; do not invent URLs or completed behavior.
+
+Use existing documentation paths. Summaries update the established codebase-summary file unless inline-only output is requested. Do not modify application code; change AGENTS.md or CLAUDE.md only on an explicit project-instruction request.

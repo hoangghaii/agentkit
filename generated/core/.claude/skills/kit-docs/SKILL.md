@@ -6,6 +6,10 @@ description: "Create, summarize or update engineering documentation from source 
 
 # kit-docs
 
-Read the relevant implementation and existing docs. --init creates only needed docs; --summarize gives a concise source-grounded overview; --update fixes outdated instructions. Check paths and examples. Do not invent repository URLs, authors or untested capabilities.
+Use existing project documentation as the source of truth, grounded in implementation evidence. Prefer established paths and split/combined document conventions.
 
-Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
+- `--init`: inspect the codebase and create the needed initial overview/PDR, codebase summary and architecture/code standards. With no existing convention, default to `docs/project-overview-pdr.md`, `docs/codebase-summary.md` and `docs/codebase-structure-architecture-code-standards.md`. Do not replace existing equivalent documents with duplicates.
+- `--summarize`: analyze relevant code and write or update `docs/codebase-summary.md` (or its established equivalent), then return its path and a short summary. If the user requests inline-only output, respect that.
+- `--update`: reconcile README and relevant existing overview, summary, architecture and standards with the current change. Include roadmap/changelog updates only where warranted by actual delivered behavior. Keep the README focused and concise.
+
+Do not implement application code. Edit `AGENTS.md` or `CLAUDE.md` only when the user specifically requests project-instruction changes. Verify file paths, commands, links and version claims; mark untested examples honestly. A read-only documentation/research worker hands proposed edits to the coordinator rather than claiming files were saved.

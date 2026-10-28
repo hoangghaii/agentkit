@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
-# Verify source when this existing project hook is enabled.
+# Verify source and the conventional commit header when this existing hook is enabled.
 if [ "$CI" = "true" ]; then
   exit 0
 fi
-node "$(git rev-parse --show-toplevel)/scripts/lint.mjs"
+repository_root=$(git rev-parse --show-toplevel) || exit 1
+node "$repository_root/scripts/lint.mjs" || exit 1
+if [ -n "$1" ]; then
+  node "$repository_root/scripts/check-commit-message.mjs" "$1"
+fi

@@ -1,4 +1,4 @@
-"""Tests for nextjs-init.py script."""
+"""Tests for nextjs_init.py script."""
 
 import json
 import sys

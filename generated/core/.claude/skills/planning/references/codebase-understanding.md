@@ -5,40 +5,17 @@
 
 ## Core Activities
 
-### Parallel Scout Agents
-- Use `/scout:ext` (preferred) or `/scout` (fallback) slash command to search the codebase for files needed to complete the task
-- Each scout locates files needed for specific task aspects
-- Wait for all scout agents to report back before analysis
-- Efficient for finding relevant code across large codebases
+### Scoped Discovery
+Search the relevant source directly for a small task. For a large unfamiliar codebase, delegate independent discovery scopes to scouts when useful and available; otherwise inspect sequentially. Do not require platform-specific slash commands.
 
-### Essential Documentation Review
-ALWAYS read these files first:
+### Documentation Review
+Read the project instructions and README when present. Inspect existing development rules, codebase summary, code standards and design guidelines that are relevant to the task. Follow the paths actually used by the project; common locations include `workflows/development-rules.md` and `docs/`.
 
-1. **`./docs/development-rules.md`** (IMPORTANT)
-   - File Name Conventions
-   - File Size Management
-   - Development rules and best practices
-   - Code quality standards
-   - Security guidelines
-
-2. **`./docs/codebase-summary.md`**
-   - Project structure and current status
-   - High-level architecture overview
-   - Component relationships
-
-3. **`./docs/code-standards.md`**
-   - Coding conventions and standards
-   - Language-specific patterns
-   - Naming conventions
-
-4. **`./docs/design-guidelines.md`** (if exists)
-   - Design system guidelines
-   - Branding and UI/UX conventions
-   - Component library usage
+Missing documentation is not a blocker by itself. Infer conventions from the source, record material assumptions, and do not create unrelated documentation just to satisfy a checklist.
 
 ### Environment Analysis
 - Review development environment setup
-- Analyze dotenv files and configuration
+- Review configuration and environment-variable names through examples; avoid reading or exposing real credentials unless the task requires it
 - Identify required dependencies
 - Understand build and deployment processes
 

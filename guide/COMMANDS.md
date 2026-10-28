@@ -1,13 +1,15 @@
 # Command mapping
 
+Generated from [kit/commands.json](../kit/commands.json). Mode arguments preserve each alias’s intent.
+
 | Claude alias | Shared skill | Arguments | Pack |
 | --- | --- | --- | --- |
-| /ask | $kit-research | default | core |
-| /bootstrap:auto:fast | $kit-implement | --auto --fast | core |
-| /bootstrap:auto | $kit-implement | --auto | core |
-| /bootstrap | $kit-implement | default | core |
-| /brainstorm | $kit-plan | default | core |
-| /code | $kit-implement | default | core |
+| /ask | $research | default | core |
+| /bootstrap:auto:fast | $kit-implement | --bootstrap --auto --fast | core |
+| /bootstrap:auto | $kit-implement | --bootstrap --auto | core |
+| /bootstrap | $kit-implement | --bootstrap | core |
+| /brainstorm | $kit-plan | --brainstorm | core |
+| /code | $kit-implement | --from-plan | core |
 | /content:cro | $kit-content | --cro | web |
 | /content:enhance | $kit-content | --enhance | web |
 | /content:fast | $kit-content | --fast | web |
@@ -38,7 +40,7 @@
 | /git:pr | $kit-git | --pr | core |
 | /integrate:polar | $kit-integrate | --polar | backend-data |
 | /integrate:sepay | $kit-integrate | --sepay | backend-data |
-| /journal | $kit-status | default | core |
+| /journal | $kit-status | --journal | core |
 | /plan:ci | $kit-plan | --ci | core |
 | /plan:cro | $kit-plan | --cro | core |
 | /plan:fast | $kit-plan | --fast | core |
