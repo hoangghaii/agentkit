@@ -10,3 +10,5 @@ Identify the failing behavior before editing. --logs starts from logs; --ci star
 Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
 
 For `--types`, use the project’s actual type-check command and repair the underlying types. Do not introduce `any`, broad casts or suppression comments merely to hide errors. Rerun the relevant checks after the correction.
+
+For `--logs`, use the supplied log path or default `logs.txt` in the target project. If absent, reproduce/capture relevant diagnostic output where feasible and disclose unavailable evidence. For `--ui`, read design guidance and verify the targeted component visually with screenshots and interaction checks. For `--hard`, create or reuse a phased repair plan before implementation, then test and review the fix. Choose default depth by actual complexity; reuse an active relevant plan rather than creating duplicates.

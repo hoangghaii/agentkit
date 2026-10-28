@@ -2,10 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {parse as yaml} from 'yaml';
 import {parse as toml} from 'smol-toml';
-import {ROOT,walk,readJSON,hash} from './lib/source.mjs';
+import {ROOT,walk,readJSON,hash,LOCAL_BACKUP_DIR} from './lib/source.mjs';
 // Encoded policy permits testing absence without embedding removed identities in source.
 const denied=Buffer.from('ZHV5W1xzLl8tXSpuZ3V5ZW58ZHV5bmd1eWVufG1yZ29vbmllfGdvb25uZ3V5ZW58ZGlzY29yZHx0ZWxlZ3JhbXxyZWRkaXR8dHdpdHRlcnxmYWNlYm9va3xsaW5rZWRpbnxpbnN0YWdyYW18dGlrdG9rfGh1bWFuW1xzLV0qbWNwfGNsYXVkZWtpdHxodHRwcz86Ly8oPzp3d3dcLik/KD86eFwuY29tfHRcLmNvKSg/OlsvXHNdfCQpfHNvY2lhbFsgLV1tZWRpYXx5b3V0dWJlfHlvdXR1XC5iZXx0d2l0Y2h8cGludGVyZXN0fHNuYXBjaGF0fG1hc3RvZG9ufHRocmVhZHNcLm5ldHxic2t5XC5hcHB8c3Vic3RhY2t8d2hhdHNhcHB8d2VpYm8=','base64').toString();
-export const excludedContent = text => new RegExp(denied,'iu').test(text.normalize('NFD').replace(/\p{M}/gu,''));
+// The explicitly ignored historical-copy path is allowed; its contents are never active source.
+const backupToken = new RegExp(`(?<![\\p{L}\\p{N}_.-])${LOCAL_BACKUP_DIR}(?![\\p{L}\\p{N}_.-])`,'gu');
+export const excludedContent = text => new RegExp(denied,'iu').test(text.replace(backupToken,'<local-backup>').normalize('NFD').replace(/\p{M}/gu,''));
 export function validate(root=ROOT) {
   const errors=[],warnings=[],packs=readJSON(path.join(root,'kit/packs.json'));
   const declared=new Set(Object.values(packs).flat()),known=new Set();

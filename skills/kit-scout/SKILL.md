@@ -5,6 +5,8 @@ description: "Locate relevant project files and execution paths before implement
 
 # kit-scout
 
-Use scoped file discovery and search. Trace entrypoints, callers and data boundaries, reporting paths and symbols. --ext inspects an external repository when provided. Avoid dependency and generated trees unless relevant. Do not edit during scouting.
+Locate relevant project files, entrypoints, callers and data boundaries using a scoped search. Return concrete paths/symbols, why they matter and unresolved questions. This is discovery, not implementation; avoid dependency/generated trees unless relevant.
 
-Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
+`--ext` means optional external-assistant scouting of the current project's supplied directories. If an approved external coding tool is already available and useful, give it a read-only, bounded search scope and use its existing model configuration. Split substantial independent scopes only when useful; report unavailable or timed-out workers without inventing their results. Otherwise use host-native search sequentially. Do not require installing a CLI, an API key, model overrides or parallel workers. An external repository is inspected only when the task actually supplies/requests one; the flag itself does not change the target from the local project.
+
+For substantial work under an active plan, return or save a dated scout report in that plan's `reports/` directory according to the shared handoff convention. Read-only workers hand contents to the coordinator for writing.

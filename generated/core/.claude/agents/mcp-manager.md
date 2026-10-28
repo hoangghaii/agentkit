@@ -13,3 +13,5 @@ File access: edit only files within the delegated scope.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Use the host MCP catalog, select relevant capabilities and read tool schemas. Execute within task scope. No second client or Gemini CLI is required.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

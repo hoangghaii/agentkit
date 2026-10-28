@@ -48,3 +48,5 @@ Sau khi cài, mở lại host nếu cần để nhận skill và agent. Tin cậ
 Nhóm `documents` giữ công cụ cũ cho DOCX/PDF/PPTX/XLSX. Các thư viện Python, LibreOffice, công cụ render hoặc Node package chuyên ngành cần được cài theo task. Đọc hướng dẫn và điều khoản trong từng skill. Khi tạo tài liệu, đọc lại nội dung và render để kiểm tra bố cục; không coi file ghi thành công là đã kiểm chứng hình thức.
 
 Xem [mapping command](COMMANDS.md), [danh mục skill](SKILLS.md), [báo cáo kiểm kê](../docs/inventory.md) và [báo cáo kiểm thử](../docs/verification.md).
+
+Đã đối chiếu lại với bản source gốc: xem [báo cáo so sánh backup](../docs/backup-comparison-2026-10-28.md). `/skill:add` thêm reference/script vào skill hiện có; `/skill:optimize` mặc định chỉ tạo plan. `/docs:summarize` chỉ báo cáo từ tài liệu hiện có, chỉ quét source khi yêu cầu. `/plan:fast` dùng thông tin cục bộ; `/plan:two` lưu hai phương án chi tiết. Statusline Claude là tùy chọn: xem [hướng dẫn](../templates/statusline/README.md).

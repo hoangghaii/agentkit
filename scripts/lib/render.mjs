@@ -43,7 +43,7 @@ export function render(packs=['core'], agents=['codex','claude'], target=ROOT) {
     else {
       add('.mcp.json',JSON.stringify({mcpServers:{}},null,2)+'\n','json');
       for(const c of readJSON(path.join(ROOT,'kit/commands.json')).filter(c=>chosen.packs.includes(c.pack))) {
-        add(`.claude/commands/${c.alias}.md`,`---\ndescription: "AgentKit ${c.workflow}"\n---\n\n${generated}Use the ${c.workflow} skill. Mode arguments: ${c.arguments || '(default)'}.\nUser request: $ARGUMENTS\n`);
+        add(`.claude/commands/${c.alias}.md`,`---\ndescription: "AgentKit ${c.workflow}"\n${c.argumentHint?`argument-hint: ${JSON.stringify(c.argumentHint)}\n`:""}---\n\n${generated}Use the ${c.workflow} skill. Mode arguments: ${c.arguments || '(default)'}.\nUser request: $ARGUMENTS\n`);
       }
     }
   }

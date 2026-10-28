@@ -5,6 +5,11 @@ description: "Write or improve website copy, landing pages, product descriptions
 
 # kit-content
 
-Identify audience, goal, product facts and desired reader action. --cro reviews conversion barriers; --enhance revises existing text; --good explores alternatives; --fast drafts a focused version. Keep claims verifiable and links grounded in supplied sources. Deliver copy for review.
+Identify the audience, goal, product facts and intended reader action. Inspect supplied screenshots/video/URLs through available host tools when they are relevant, and find the actual page/content source before applying copy changes. Keep service-specific generation optional.
 
-Treat mode flags as task parameters. Preserve user scope and existing instructions. Use equivalent host tools. Hand off the outcome, changed paths, checks and remaining uncertainty.
+- `--fast`: produce a focused draft from supplied facts with minimal research; do not invent claims.
+- `--good`: understand reference material and existing source/context, research material uncertainties when needed, plan the message/hierarchy and then deliver polished copy. Offer useful alternatives and a short rationale. Do not impose unnecessary external research on an already clear task.
+- `--enhance`: diagnose the supplied copy issues and apply improved copy to the relevant requested source/content files, preserving unrelated code and behavior. If the target cannot be identified, obtain it before writing.
+- `--cro`: inspect the actual page, URL or supplied reference, locate relevant source and apply conversion-copy improvements within the request. Review clarity of headline/value proposition, CTA, message consistency, form friction, truthful trust signals, objections, readability, mobile access and appropriate experiment design. Do not fabricate conversion percentages, urgency, testimonials or measured uplift.
+
+Drafting modes return copy for review unless application is requested; enhancement/CRO modes apply the requested copy edits. If the user asks only for analysis or a plan, honor that boundary and use `kit-plan --cro` for a persisted implementation plan. Deliver primary copy, useful alternatives, rationale and optional A/B ideas; report link-verification status honestly. Do not publish or distribute the copy without authorization.

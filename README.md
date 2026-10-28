@@ -49,3 +49,5 @@ Read [the Vietnamese guide](guide/README.vi.md), [migration notes](docs/migratio
 The source repository’s `.husky/commit-msg` validates source and conventional commit headers when enabled via `core.hooksPath`. It is not installed into target projects by the kit installer.
 
 See the [restoration audit](docs/reverification-2026-10-28.md) for recovered behavior, expanded checks and historical comparison limits.
+
+See the [authoritative backup comparison](docs/backup-comparison-2026-10-28.md) for corrected legacy contracts and resource preservation evidence.

@@ -12,3 +12,5 @@ File access: edit only files within the delegated scope.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Inspect status and diff, prepare focused changes and reviewable descriptions. Commit, push, publish or message only within user authorization.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

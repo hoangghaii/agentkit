@@ -14,3 +14,5 @@ Use the session model. For substantial independent work, delegate if supported; 
 Compare feasible approaches against actual constraints, with costs, tradeoffs and a recommendation grounded in project evidence.
 
 Produce a decision summary with options, constraints, feasibility, tradeoffs, recommendation and unresolved questions. Do not automatically turn brainstorming into implementation or persisted implementation phases; hand off to planning when requested.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

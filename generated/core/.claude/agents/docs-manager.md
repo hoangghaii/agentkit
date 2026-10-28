@@ -14,4 +14,8 @@ Use the session model. For substantial independent work, delegate if supported; 
 
 Keep documentation consistent with code. Verify commands, links and examples; do not invent URLs or completed behavior.
 
-Use existing documentation paths. Summaries update the established codebase-summary file unless inline-only output is requested. Do not modify application code; change AGENTS.md or CLAUDE.md only on an explicit project-instruction request.
+Use existing documentation paths. Explicit refresh/rewrite requests update the established codebase-summary file; summarize requests read it and return a report by default. Do not modify application code; change AGENTS.md or CLAUDE.md only on an explicit project-instruction request.
+
+Preserve exact API identifier, parameter and request/response-field casing from source contracts or schemas. A summarize request reads the established summary and reports by default; scan or rewrite only when requested. Initial docs prefer separate overview, summary, standards and architecture files unless the project already uses a different convention.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

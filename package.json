@@ -38,7 +38,9 @@
     "tests",
     "generated",
     ".commitlintrc.json",
-    ".husky"
+    ".husky",
+    ".gitignore",
+    ".gitattributes"
   ],
   "dependencies": {
     "smol-toml": "1.9.1",

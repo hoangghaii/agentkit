@@ -5,10 +5,11 @@ description: "Create, summarize or update engineering documentation from source 
 
 # kit-docs
 
-Use existing project documentation as the source of truth, grounded in implementation evidence. Prefer established paths and split/combined document conventions.
+Use existing project documentation and preserve established paths. Do not implement application code or change project instructions unless explicitly requested.
 
-- `--init`: inspect the codebase and create the needed initial overview/PDR, codebase summary and architecture/code standards. With no existing convention, default to `docs/project-overview-pdr.md`, `docs/codebase-summary.md` and `docs/codebase-structure-architecture-code-standards.md`. Do not replace existing equivalent documents with duplicates.
-- `--summarize`: analyze relevant code and write or update `docs/codebase-summary.md` (or its established equivalent), then return its path and a short summary. If the user requests inline-only output, respect that.
-- `--update`: reconcile README and relevant existing overview, summary, architecture and standards with the current change. Include roadmap/changelog updates only where warranted by actual delivered behavior. Keep the README focused and concise.
+- `--init`: inspect the codebase and create the needed initial `docs/project-overview-pdr.md`, `docs/codebase-summary.md`, `docs/code-standards.md` and `docs/system-architecture.md`, then update README with concise getting-started/documentation guidance. Prefer established equivalent paths or a combined document already used by the project; do not create duplicates.
+- `--summarize`: read the existing codebase summary (normally `docs/codebase-summary.md`) and return a summary report focused on the requested topics, defaulting to all topics. Accept the legacy focused-topics argument followed by a scan boolean, default `false`. Do not scan the entire codebase unless that boolean is true, `--scan` is supplied or the user explicitly requests it. If the summary is absent/stale and scanning is not authorized, report the limitation. This mode returns a report; it does not rewrite documentation, even when scanning is enabled, unless saving/updating is also requested.
+- `--scan`: explicitly permit codebase discovery for the requested summary; keep the depth relevant to its topics.
+- `--update`: reconcile README and affected existing overview, summary, architecture and standards with actual changes. Include roadmap/changelog updates only where warranted; keep README focused and concise.
 
-Do not implement application code. Edit `AGENTS.md` or `CLAUDE.md` only when the user specifically requests project-instruction changes. Verify file paths, commands, links and version claims; mark untested examples honestly. A read-only documentation/research worker hands proposed edits to the coordinator rather than claiming files were saved.
+Preserve the exact case and spelling of API identifiers, parameters and request/response fields from source, schemas or contracts. Do not normalize them to a preferred prose convention. Edit `AGENTS.md` or `CLAUDE.md` only on an explicit project-instruction request. Verify paths, commands, links and version claims, and distinguish read-only findings/proposed edits from saved files.

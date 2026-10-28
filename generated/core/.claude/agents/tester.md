@@ -15,3 +15,5 @@ Use the session model. For substantial independent work, delegate if supported; 
 Use actual project commands. Start with the relevant behavior and expand when failures or material risks justify it. Distinguish executed, passed, failed and untested checks.
 
 Default to running checks and reporting failures, without changing source, tests or snapshots. Repair only when explicitly delegated an implementation task. Include relevant boundary/error cases, isolation/cleanup, flaky-test diagnosis and applicable type/build/coverage checks.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

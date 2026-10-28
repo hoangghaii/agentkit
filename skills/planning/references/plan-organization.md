@@ -26,13 +26,13 @@ Keep the overview concise, preferably under 80 lines. Include the goal, scope an
 
 Include the information needed to execute that phase:
 
-- Scope, dependencies and current status.
-- Relevant context or research links.
+- Scope, local date, priority, dependencies, implementation status and review status.
+- Relevant context/research links and the insights that affect the implementation.
 - Files to create, modify or delete, with the reason for each change. Mark proposed paths as proposed when they do not exist yet.
 - Requirements and architecture decisions where relevant.
 - Ordered implementation steps and todo checkboxes.
 - Acceptance criteria and concrete verification commands or observable checks.
-- Material risks, security considerations and rollback steps where relevant.
+- Material risks, security considerations and rollback steps where relevant, followed by next actions.
 
 Follow project instructions and applicable development rules. Do not pad small phases with empty headings. Phase links are relative to the phase file, not to the project root.
 

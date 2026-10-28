@@ -1,3 +1,7 @@
+# Authoring reference scope
+
+The entrypoint mode determines allowed work. The creation/implementation procedures below do not authorize editing a skill during `--optimize` planning, importing another skill during `--add`, or packaging unless an archive is requested. For portable discovery metadata, follow the linked Agent Skills specification; put optional version information inside `metadata`, not at the top level.
+
 # Skill Creator
 
 This skill provides guidance for creating effective skills.
@@ -28,7 +32,7 @@ skills/
     │   │   ├── name: (required)
     │   │   ├── description: (required)
     │   │   ├── license: (optional)
-    │   │   └── version: (optional)
+    │   │   └── metadata: (optional; string values, including version)
     │   └── Markdown instructions (required)
     └── Bundled Resources (optional)
         ├── scripts/          - Executable code (Python/Bash/etc.)
@@ -50,7 +54,7 @@ skills/
   - If you're going to write python scripts, make sure you have `requirements.txt`
   - Make sure scripts respect `.env` file follow this order: `process.env` > `skills/${SKILL}/.env` > `skills/.env` > `.claude/.env` 
   - Create `.env.example` files to show the required environment variables.
-  - Always write tests for these scripts.
+  - Run meaningful checks or regression tests appropriate to new or changed helper behavior.
 
 **IMPORTANT:**
 - Always keep in mind that `SKILL.md` and reference files should be token consumption efficient, so that **progressive disclosure** can be leveraged at best.
@@ -169,7 +173,7 @@ At this point, it is time to actually create the skill.
 
 Skip this step only if the skill being developed already exists, and iteration or packaging is needed. In this case, continue to the next step.
 
-When creating a new skill from scratch, always run the `init_skill.py` script. The script conveniently generates a new template skill directory that automatically includes everything a skill requires, making the skill creation process much more efficient and reliable.
+When creating a new skill from scratch, use `init_skill.py` when it helps. Do not reinitialize an existing skill for a resource addition or planning-only task. The script conveniently generates a new template skill directory that automatically includes everything a skill requires, making the skill creation process much more efficient and reliable.
 
 Usage:
 
@@ -208,16 +212,16 @@ To complete SKILL.md, answer the following questions:
 
 ### Step 5: Packaging a Skill
 
-Once the skill is ready, it should be packaged into a distributable zip file that gets shared with the user. The packaging process automatically validates the skill first to ensure it meets all requirements:
+Package a skill only when a distributable archive is requested. Local edits and planning-only proposals do not require an archive. The legacy packaging helper runs minimal frontmatter checks; it does not prove complete specification compliance, resource-link correctness or behavior. Use the project/host validation and relevant exercises as well:
 
 ```bash
-scripts/package_skill.py <path/to/skill-folder>
+python scripts/package_skill.py <path/to/skill-folder>
 ```
 
 Optional output directory specification:
 
 ```bash
-scripts/package_skill.py <path/to/skill-folder> ./dist
+python scripts/package_skill.py <path/to/skill-folder> ./dist
 ```
 
 The packaging script will:
@@ -226,7 +230,7 @@ The packaging script will:
    - YAML frontmatter format and required fields
    - Skill naming conventions and directory structure
    - Description completeness and quality
-   - File organization and resource references
+   - Basic frontmatter checks only; verify resource links and actual behavior separately
 
 2. **Package** the skill if validation passes, creating a zip file named after the skill (e.g., `my-skill.zip`) that includes all files and maintains the proper directory structure for distribution.
 

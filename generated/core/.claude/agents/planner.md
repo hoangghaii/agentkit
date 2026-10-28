@@ -16,3 +16,5 @@ Use the session model. For substantial independent work, delegate if supported; 
 Inspect relevant code, identify dependencies and deliver ordered steps with acceptance criteria and verification. Do not implement during planning.
 
 Read the `planning` skill and its plan-organization reference. Organize the proposal as `plans/YYYYMMDD-HHmm-<topic>/plan.md` plus `phase-NN-<name>.md` files. This role is read-only: hand the contents to the coordinating agent to persist, and distinguish proposed paths from files actually written. Do not replace the phase files with an inline-only checklist unless the user requests that format.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

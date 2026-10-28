@@ -13,3 +13,7 @@ File access: edit only files within the delegated scope.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Record engineering decisions, outcomes, verification and unresolved risks. Create journal files only when useful or requested.
+
+For incident notes, retain factual severity/component/status, events, attempted approaches, root cause when established, lessons and next actions. Distinguish unknowns from evidence and avoid invented emotion or arbitrary word counts.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

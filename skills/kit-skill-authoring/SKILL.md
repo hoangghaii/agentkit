@@ -6,13 +6,14 @@ license: Complete terms in LICENSE.txt
 
 # kit-skill-authoring
 
-Create or revise portable project skills. Read [the detailed guide](references/guide.md) and the current project conventions. Resolve resources from this skill directory, independent of shell working directory.
+Create or revise portable project skills. Read [the detailed guide](references/guide.md) and project conventions. Resolve resources relative to this skill directory.
 
 ## Modes
 
-- `--create`: define the capability, trigger boundaries and realistic examples; scaffold only needed scripts/references/assets. Keep name and directory aligned and write valid discovery metadata.
-- `--add`: inspect the supplied skill/repository, verify source and license, avoid duplicating an installed capability, and bring in required resources. Record the upstream commit/checksum and local adaptations; normalize host-tool names without inventing tool access. Keep external dependencies optional until used.
-- `--fix-logs`: reproduce the reported skill/script failure from supplied logs, locate the failing path or dependency, make a targeted correction and rerun the relevant reproduction. Do not silently expand permissions or change unrelated host configuration.
-- `--optimize`: improve trigger precision, instruction clarity and resource loading using demonstrated behavior. Preserve existing capabilities and source terms; move deep detail into references rather than discarding it.
+- `--create`: define the capability, trigger boundaries and realistic examples; scaffold only required scripts/references/assets. Keep metadata and directory names aligned.
+- `--add`: add reference files or scripts to a named existing skill. Use the supplied skill name/path and resource requirement; obtain either if it cannot be inferred from context. Inspect current resources, add only the requested material and link it from the appropriate entrypoint/reference using progressive disclosure. This mode does not mean importing a different skill.
+- `--import`: for an explicit repository/skill import request, inspect source and license, avoid duplicates, preserve required resources and record the upstream commit/checksum and local adaptations. Normalize host tools without inventing access; keep service dependencies optional. Importing remains separate from resource addition.
+- `--fix-logs`: use the supplied log path or project-root `logs.txt` by default. Report missing evidence and reproduce/capture relevant diagnostics where feasible; then reproduce the reported failure, identify the failing path/dependency, make the targeted authorized repair and rerun the reproduction. Do not silently alter unrelated host configuration or permissions.
+- `--optimize`: inspect the named skill and propose improvements to triggers, structure, resource loading and demonstrated behavior. Default to planning only: persist an overview and phase files using the sibling `planning` conventions, then return the plan for review. Do not edit the target skill unless implementation is already authorized or requested subsequently. Do not repeat approval requests for an already approved implementation scope.
 
-With no flag, select the mode from the request. Verify metadata, resource links and changed scripts, and check realistic positive/negative prompts for substantial revisions. Do not overwrite another skill or alter user-wide settings without task authorization. Use host-native capabilities; service-specific keys are not required for ordinary skill authoring.
+With no flag, infer the mode from the actual task. Verify metadata, links and changed scripts; exercise realistic positive/negative requests for substantial revisions. Preserve capabilities and source terms. Inspect documentation/repositories only as deeply as the requested resource needs; delegation and external services are optional. Do not modify another skill or user-wide settings outside task authorization.

@@ -15,3 +15,5 @@ Inspect the current branch, working-tree changes, recent commits, relevant activ
 Record the actual task context, decisions, completed work, verification evidence, problems and remaining work. Follow the project's journal convention; otherwise write `docs/journals/YYYYMMDD-journal.md` using the current local date. Append to the existing day's entry without replacing unrelated content. Do not invent personal experiences, emotion, tests or outcomes. Return the saved path; if writing is unavailable, disclose that and provide the proposed entry for handoff.
 
 Preserve user scope and existing instructions. Only update a plan's status when requested or as part of delivering its verified work.
+
+When a journal concerns an incident, include factual severity, component/status, what happened, attempted approaches, observed root cause, lessons and next actions where known. Mark unknowns; do not invent an incident, root cause or personal emotion to fill headings.

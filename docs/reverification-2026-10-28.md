@@ -50,3 +50,7 @@ Host configuration corrections were checked against official [settings](https://
 The prior four-format Office/PDF creation/edit/reread/render checks remain recorded in [the original verification report](verification.md). Office rendering was not repeated in this pass because its runtime code did not change. Live Claude acceptance remains subject to the previously observed organization access restriction; it is not reported as a new pass.
 
 Repeat commands are in [README](../README.md), [Vietnamese usage](../guide/README.vi.md) and [the generated alias mapping](../guide/COMMANDS.md). For optional helper tests, install `scripts/requirements-helper-tests.txt` in a temporary virtual environment, then run the preserved pytest paths used in CI.
+
+## Subsequent authoritative comparison
+
+The original local backup became available after this audit. See the [backup comparison](backup-comparison-2026-10-28.md) for corrected contracts and complete resource mappings.

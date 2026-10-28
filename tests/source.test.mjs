@@ -59,3 +59,9 @@ test('public aliases preserve distinct task modes in installed commands',()=>{
   assert.equal(mode('cook'),'(default).');
   assert.equal(mode('bootstrap/auto/fast'),'--bootstrap --auto --fast.');
 });
+test('legacy command input hints are installed as valid string metadata',()=>{
+  const {files}=render(['core']);
+  const metadata=alias=>yaml(files.get(`.claude/commands/${alias}.md`).data.toString().match(/^---\n([\s\S]*?)\n---\n/)[1]);
+  assert.equal(metadata('skill/add')['argument-hint'],'[skill-name] [reference-or-script-prompt]');
+  assert.equal(metadata('git/pr')['argument-hint'],'[branch] [from-branch]');
+});

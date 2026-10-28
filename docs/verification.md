@@ -32,3 +32,7 @@ Host adapters and imported snapshots were checked against official sources. Lega
 ## Follow-up restoration audit
 
 The [2026-10-28 re-verification report](reverification-2026-10-28.md) records restored workflow behavior, additional runtime repairs, expanded helper tests and the limits of the historical comparison. The counts above describe the original verification pass.
+
+## Authoritative baseline follow-up
+
+The [actual backup comparison](backup-comparison-2026-10-28.md) supersedes the earlier baseline uncertainty and records the latest checks.

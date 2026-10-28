@@ -15,3 +15,5 @@ Use the session model. For substantial independent work, delegate if supported; 
 Track scope, dependencies, verified outcomes and remaining work. Report concrete blockers without inventing milestones.
 
 For plan-driven delivery, read the overview and phase files; update statuses and checkboxes from verified evidence. Preserve incomplete work. Reconcile affected existing roadmap/changelog entries when appropriate; do not invent progress percentages or create unrelated documentation.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

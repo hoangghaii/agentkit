@@ -12,3 +12,7 @@ File access: edit only files within the delegated scope.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Follow the existing design system, provide accessible responsive states and verify interactions in a browser using concrete UI readiness.
+
+Consult the established design guidelines and maintain them when introducing reusable tokens/patterns during authorized implementation. Record substantial design rationale in the active plan report. Verify requested-language glyphs and fallback fonts, especially Vietnamese diacritics; distinguish inferred font identity from confirmed measurements.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import {ROOT,walk,readJSON,write,hash} from './lib/source.mjs';
+import {ROOT,walk,readJSON,write,hash,LOCAL_BACKUP_DIR} from './lib/source.mjs';
 import {validate} from './validate.mjs';
 import {zip} from './lib/zip.mjs';
 export function build({dryRun=false}={}) {
@@ -11,6 +11,7 @@ export function build({dryRun=false}={}) {
     if(!fs.existsSync(p))continue;
     for(const f of fs.statSync(p).isDirectory()?walk(p):[p]) {
       const rel=path.relative(ROOT,f).split(path.sep).join('/');
+      if(rel.split('/').includes(LOCAL_BACKUP_DIR))continue;
       if(/(^|\/)\.env(?:\..*)?$/.test(rel)&&path.basename(rel)!=='.env.example')continue;
       if(/(^|\/)(?:\.env|\.coverage|coverage.*|.*\.log|.*\.pyc|.*\.zip|.*\.tgz|.*\.tar\.gz)$/.test(rel))continue;
       if(/(?:\.(?:pem|key|p12|pfx)|(?:^|\/)(?:credentials|service-account)\.json)$/.test(rel))continue;

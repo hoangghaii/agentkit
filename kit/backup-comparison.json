@@ -1,0 +1,401 @@
+{
+  "baselineDirectory": "claudekit-engineer-backup",
+  "baselineFiles": 711,
+  "baselineFingerprintSha256": "d4fbbf9e7738b8d266f785da184d5f6136b0c48f0c7e46b909a90ea3736648c0",
+  "originalSkills": 34,
+  "originalAgents": 16,
+  "originalCommands": 53,
+  "originalWorkflows": 4,
+  "mappedAliasesExact": true,
+  "originalArgumentHints": 45,
+  "commonResourcesPreserved": 2,
+  "documentSchemasByteIdentical": 78,
+  "intentionalOmissions": {
+    "generatedCacheOrTestReports": 15,
+    "retiredStandaloneMcpClient": 10
+  },
+  "unclassifiedMissingResources": 0,
+  "components": [
+    {
+      "original": ".claude/skills/aesthetic",
+      "current": "skills/aesthetic",
+      "originalFiles": 7,
+      "preservedPaths": 7,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/ai-multimodal",
+      "current": "skills/ai-multimodal",
+      "originalFiles": 17,
+      "preservedPaths": 14,
+      "changedFiles": 6,
+      "omissions": [
+        {
+          "original": ".claude/skills/ai-multimodal/scripts/.coverage",
+          "reason": "generated-cache-or-test-report"
+        },
+        {
+          "original": ".claude/skills/ai-multimodal/scripts/tests/.coverage",
+          "reason": "generated-cache-or-test-report"
+        },
+        {
+          "original": ".claude/skills/ai-multimodal/scripts/tests/test_failures.log",
+          "reason": "generated-cache-or-test-report"
+        }
+      ]
+    },
+    {
+      "original": ".claude/skills/backend-development",
+      "current": "skills/backend-development",
+      "originalFiles": 12,
+      "preservedPaths": 12,
+      "changedFiles": 2,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/better-auth",
+      "current": "skills/better-auth",
+      "originalFiles": 10,
+      "preservedPaths": 8,
+      "changedFiles": 4,
+      "omissions": [
+        {
+          "original": ".claude/skills/better-auth/scripts/.coverage",
+          "reason": "generated-cache-or-test-report"
+        },
+        {
+          "original": ".claude/skills/better-auth/scripts/tests/.coverage",
+          "reason": "generated-cache-or-test-report"
+        }
+      ]
+    },
+    {
+      "original": ".claude/skills/chrome-devtools",
+      "current": "skills/chrome-devtools",
+      "originalFiles": 21,
+      "preservedPaths": 21,
+      "changedFiles": 3,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/claude-code",
+      "current": "skills/claude-code",
+      "originalFiles": 14,
+      "preservedPaths": 14,
+      "changedFiles": 9,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/code-review",
+      "current": "skills/code-review",
+      "originalFiles": 4,
+      "preservedPaths": 4,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/databases",
+      "current": "skills/databases",
+      "originalFiles": 19,
+      "preservedPaths": 17,
+      "changedFiles": 6,
+      "omissions": [
+        {
+          "original": ".claude/skills/databases/scripts/.coverage",
+          "reason": "generated-cache-or-test-report"
+        },
+        {
+          "original": ".claude/skills/databases/scripts/tests/coverage-db.json",
+          "reason": "generated-cache-or-test-report"
+        }
+      ]
+    },
+    {
+      "original": ".claude/skills/debugging",
+      "current": "skills/debugging",
+      "originalFiles": 7,
+      "preservedPaths": 7,
+      "changedFiles": 2,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/devops",
+      "current": "skills/devops",
+      "originalFiles": 19,
+      "preservedPaths": 19,
+      "changedFiles": 6,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/docs-seeker",
+      "current": "skills/docs-seeker",
+      "originalFiles": 17,
+      "preservedPaths": 17,
+      "changedFiles": 2,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/document-skills/docx",
+      "current": "skills/docx",
+      "originalFiles": 59,
+      "preservedPaths": 59,
+      "changedFiles": 3,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/document-skills/pdf",
+      "current": "skills/pdf",
+      "originalFiles": 12,
+      "preservedPaths": 12,
+      "changedFiles": 2,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/document-skills/pptx",
+      "current": "skills/pptx",
+      "originalFiles": 56,
+      "preservedPaths": 56,
+      "changedFiles": 2,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/document-skills/xlsx",
+      "current": "skills/xlsx",
+      "originalFiles": 3,
+      "preservedPaths": 3,
+      "changedFiles": 2,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/frontend-design",
+      "current": "skills/frontend-design",
+      "originalFiles": 2,
+      "preservedPaths": 2,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/frontend-development",
+      "current": "skills/frontend-development",
+      "originalFiles": 11,
+      "preservedPaths": 11,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/google-adk-python",
+      "current": "skills/google-adk-python",
+      "originalFiles": 1,
+      "preservedPaths": 1,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/mcp-builder",
+      "current": "skills/mcp-builder",
+      "originalFiles": 10,
+      "preservedPaths": 10,
+      "changedFiles": 4,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/mcp-management",
+      "current": "skills/mcp-management",
+      "originalFiles": 15,
+      "preservedPaths": 5,
+      "changedFiles": 4,
+      "omissions": [
+        {
+          "original": ".claude/skills/mcp-management/assets/tools.json",
+          "reason": "retired-standalone-mcp-client"
+        },
+        {
+          "original": ".claude/skills/mcp-management/scripts/.env.example",
+          "reason": "retired-standalone-mcp-client"
+        },
+        {
+          "original": ".claude/skills/mcp-management/scripts/.gitignore",
+          "reason": "retired-standalone-mcp-client"
+        },
+        {
+          "original": ".claude/skills/mcp-management/scripts/cli.ts",
+          "reason": "retired-standalone-mcp-client"
+        },
+        {
+          "original": ".claude/skills/mcp-management/scripts/dist/analyze-tools.js",
+          "reason": "retired-standalone-mcp-client"
+        },
+        {
+          "original": ".claude/skills/mcp-management/scripts/dist/cli.js",
+          "reason": "retired-standalone-mcp-client"
+        },
+        {
+          "original": ".claude/skills/mcp-management/scripts/dist/mcp-client.js",
+          "reason": "retired-standalone-mcp-client"
+        },
+        {
+          "original": ".claude/skills/mcp-management/scripts/mcp-client.ts",
+          "reason": "retired-standalone-mcp-client"
+        },
+        {
+          "original": ".claude/skills/mcp-management/scripts/package.json",
+          "reason": "retired-standalone-mcp-client"
+        },
+        {
+          "original": ".claude/skills/mcp-management/scripts/tsconfig.json",
+          "reason": "retired-standalone-mcp-client"
+        }
+      ]
+    },
+    {
+      "original": ".claude/skills/media-processing",
+      "current": "skills/media-processing",
+      "originalFiles": 16,
+      "preservedPaths": 15,
+      "changedFiles": 6,
+      "omissions": [
+        {
+          "original": ".claude/skills/media-processing/scripts/tests/.coverage",
+          "reason": "generated-cache-or-test-report"
+        }
+      ]
+    },
+    {
+      "original": ".claude/skills/mobile-development",
+      "current": "skills/mobile-development",
+      "originalFiles": 7,
+      "preservedPaths": 7,
+      "changedFiles": 4,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/payment-integration",
+      "current": "skills/payment-integration",
+      "originalFiles": 22,
+      "preservedPaths": 22,
+      "changedFiles": 3,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/planning",
+      "current": "skills/planning",
+      "originalFiles": 6,
+      "preservedPaths": 6,
+      "changedFiles": 5,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/problem-solving",
+      "current": "skills/problem-solving",
+      "originalFiles": 8,
+      "preservedPaths": 8,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/repomix",
+      "current": "skills/repomix",
+      "originalFiles": 9,
+      "preservedPaths": 8,
+      "changedFiles": 3,
+      "omissions": [
+        {
+          "original": ".claude/skills/repomix/scripts/.coverage",
+          "reason": "generated-cache-or-test-report"
+        }
+      ]
+    },
+    {
+      "original": ".claude/skills/research",
+      "current": "skills/research",
+      "originalFiles": 1,
+      "preservedPaths": 1,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/sequential-thinking",
+      "current": "skills/sequential-thinking",
+      "originalFiles": 15,
+      "preservedPaths": 15,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/shopify",
+      "current": "skills/shopify",
+      "originalFiles": 10,
+      "preservedPaths": 8,
+      "changedFiles": 1,
+      "omissions": [
+        {
+          "original": ".claude/skills/shopify/scripts/.coverage",
+          "reason": "generated-cache-or-test-report"
+        },
+        {
+          "original": ".claude/skills/shopify/scripts/tests/.coverage",
+          "reason": "generated-cache-or-test-report"
+        }
+      ]
+    },
+    {
+      "original": ".claude/skills/skill-creator",
+      "current": "skills/kit-skill-authoring",
+      "originalFiles": 5,
+      "preservedPaths": 5,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/template-skill",
+      "current": "templates/skill",
+      "originalFiles": 1,
+      "preservedPaths": 1,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/threejs",
+      "current": "skills/threejs",
+      "originalFiles": 17,
+      "preservedPaths": 17,
+      "changedFiles": 1,
+      "omissions": []
+    },
+    {
+      "original": ".claude/skills/ui-styling",
+      "current": "skills/ui-styling",
+      "originalFiles": 98,
+      "preservedPaths": 96,
+      "changedFiles": 1,
+      "omissions": [
+        {
+          "original": ".claude/skills/ui-styling/scripts/.coverage",
+          "reason": "generated-cache-or-test-report"
+        },
+        {
+          "original": ".claude/skills/ui-styling/scripts/tests/coverage-ui.json",
+          "reason": "generated-cache-or-test-report"
+        }
+      ]
+    },
+    {
+      "original": ".claude/skills/web-frameworks",
+      "current": "skills/web-frameworks",
+      "originalFiles": 18,
+      "preservedPaths": 16,
+      "changedFiles": 5,
+      "omissions": [
+        {
+          "original": ".claude/skills/web-frameworks/scripts/.coverage",
+          "reason": "generated-cache-or-test-report"
+        },
+        {
+          "original": ".claude/skills/web-frameworks/scripts/tests/coverage-web.json",
+          "reason": "generated-cache-or-test-report"
+        }
+      ]
+    }
+  ]
+}

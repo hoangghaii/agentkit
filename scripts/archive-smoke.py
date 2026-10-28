@@ -25,7 +25,7 @@ def main():
             for name in bundle.namelist():
                 relative = Path(name)
                 assert not relative.is_absolute() and '..' not in relative.parts
-                assert not any(part in {'node_modules', '__pycache__', '.git', 'coverage'} for part in relative.parts)
+                assert not any(part in {'node_modules', '__pycache__', '.git', 'coverage', 'claudekit-engineer-backup'} for part in relative.parts)
                 assert relative.suffix not in {'.zip', '.gz', '.pyc', '.log'}
                 assert not relative.name.startswith('.env') or relative.name == '.env.example'
             bundle.extractall(folder)

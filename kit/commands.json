@@ -5,7 +5,8 @@
     "arguments": "",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[technical-question]"
   },
   {
     "alias": "bootstrap/auto/fast",
@@ -13,7 +14,8 @@
     "arguments": "--bootstrap --auto --fast",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[user-requirements]"
   },
   {
     "alias": "bootstrap/auto",
@@ -21,7 +23,8 @@
     "arguments": "--bootstrap --auto",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[user-requirements]"
   },
   {
     "alias": "bootstrap",
@@ -29,7 +32,8 @@
     "arguments": "--bootstrap",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[user-requirements]"
   },
   {
     "alias": "brainstorm",
@@ -37,7 +41,8 @@
     "arguments": "--brainstorm",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[question]"
   },
   {
     "alias": "code",
@@ -45,7 +50,8 @@
     "arguments": "--from-plan",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[plan]"
   },
   {
     "alias": "content/cro",
@@ -53,7 +59,8 @@
     "arguments": "--cro",
     "pack": "web",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[issues]"
   },
   {
     "alias": "content/enhance",
@@ -61,7 +68,8 @@
     "arguments": "--enhance",
     "pack": "web",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[issues]"
   },
   {
     "alias": "content/fast",
@@ -69,7 +77,8 @@
     "arguments": "--fast",
     "pack": "web",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[user-request]"
   },
   {
     "alias": "content/good",
@@ -77,7 +86,8 @@
     "arguments": "--good",
     "pack": "web",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[user-request]"
   },
   {
     "alias": "cook/auto/fast",
@@ -85,7 +95,8 @@
     "arguments": "--auto --fast",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[tasks-or-prompt]"
   },
   {
     "alias": "cook/auto",
@@ -93,7 +104,8 @@
     "arguments": "--auto",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[tasks]"
   },
   {
     "alias": "cook",
@@ -101,7 +113,8 @@
     "arguments": "",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[tasks]"
   },
   {
     "alias": "debug",
@@ -109,7 +122,8 @@
     "arguments": "",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[issues]"
   },
   {
     "alias": "design/3d",
@@ -117,7 +131,8 @@
     "arguments": "--3d",
     "pack": "web",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[tasks]"
   },
   {
     "alias": "design/describe",
@@ -125,7 +140,8 @@
     "arguments": "--describe",
     "pack": "web",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[screenshot]"
   },
   {
     "alias": "design/fast",
@@ -133,7 +149,8 @@
     "arguments": "--fast",
     "pack": "web",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[tasks]"
   },
   {
     "alias": "design/good",
@@ -141,7 +158,8 @@
     "arguments": "--good",
     "pack": "web",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[tasks]"
   },
   {
     "alias": "design/screenshot",
@@ -149,7 +167,8 @@
     "arguments": "--screenshot",
     "pack": "web",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[screenshot]"
   },
   {
     "alias": "design/video",
@@ -157,7 +176,8 @@
     "arguments": "--video",
     "pack": "web",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[video]"
   },
   {
     "alias": "docs/init",
@@ -173,7 +193,8 @@
     "arguments": "--summarize",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[focused-topics] [should-scan-codebase]"
   },
   {
     "alias": "docs/update",
@@ -189,7 +210,8 @@
     "arguments": "--ci",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[github-actions-url]"
   },
   {
     "alias": "fix/fast",
@@ -197,7 +219,8 @@
     "arguments": "--fast",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[issues]"
   },
   {
     "alias": "fix/hard",
@@ -205,7 +228,8 @@
     "arguments": "--hard",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[issues]"
   },
   {
     "alias": "fix/logs",
@@ -213,7 +237,8 @@
     "arguments": "--logs",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[issue]"
   },
   {
     "alias": "fix/test",
@@ -221,7 +246,8 @@
     "arguments": "--test",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[issues]"
   },
   {
     "alias": "fix/types",
@@ -237,7 +263,8 @@
     "arguments": "--ui",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[issue]"
   },
   {
     "alias": "fix",
@@ -245,7 +272,8 @@
     "arguments": "",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[issues]"
   },
   {
     "alias": "git/cm",
@@ -269,7 +297,8 @@
     "arguments": "--pr",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[branch] [from-branch]"
   },
   {
     "alias": "integrate/polar",
@@ -277,7 +306,8 @@
     "arguments": "--polar",
     "pack": "backend-data",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[tasks]"
   },
   {
     "alias": "integrate/sepay",
@@ -285,7 +315,8 @@
     "arguments": "--sepay",
     "pack": "backend-data",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[tasks]"
   },
   {
     "alias": "journal",
@@ -301,7 +332,8 @@
     "arguments": "--ci",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[github-actions-url]"
   },
   {
     "alias": "plan/cro",
@@ -309,7 +341,8 @@
     "arguments": "--cro",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[issues]"
   },
   {
     "alias": "plan/fast",
@@ -317,7 +350,8 @@
     "arguments": "--fast",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[task]"
   },
   {
     "alias": "plan/hard",
@@ -325,7 +359,8 @@
     "arguments": "--hard",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[task]"
   },
   {
     "alias": "plan/two",
@@ -333,7 +368,8 @@
     "arguments": "--two",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[task]"
   },
   {
     "alias": "plan",
@@ -341,7 +377,8 @@
     "arguments": "",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[task]"
   },
   {
     "alias": "review/codebase",
@@ -349,7 +386,8 @@
     "arguments": "--codebase",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[tasks-or-prompt]"
   },
   {
     "alias": "scout/ext",
@@ -357,7 +395,8 @@
     "arguments": "--ext",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[user-prompt] [scale]"
   },
   {
     "alias": "scout",
@@ -365,7 +404,8 @@
     "arguments": "",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[user-prompt] [scale]"
   },
   {
     "alias": "skill/add",
@@ -373,7 +413,8 @@
     "arguments": "--add",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[skill-name] [reference-or-script-prompt]"
   },
   {
     "alias": "skill/create",
@@ -381,7 +422,8 @@
     "arguments": "--create",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[prompt-or-llms-or-github-url]"
   },
   {
     "alias": "skill/fix-logs",
@@ -389,7 +431,8 @@
     "arguments": "--fix-logs",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[prompt-or-path-to-skill]"
   },
   {
     "alias": "skill/optimize",
@@ -397,7 +440,8 @@
     "arguments": "--optimize",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[skill-name] [prompt]"
   },
   {
     "alias": "test",
@@ -413,7 +457,8 @@
     "arguments": "",
     "pack": "core",
     "decision": "merge",
-    "reason": "Variants become arguments to shared workflow"
+    "reason": "Variants become arguments to shared workflow",
+    "argumentHint": "[task]"
   },
   {
     "alias": "watzup",

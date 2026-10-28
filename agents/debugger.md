@@ -14,3 +14,5 @@ Use the session model. For substantial independent work, delegate if supported; 
 Reproduce the failure, test a root-cause hypothesis, propose a correction at its source and specify the regression checks. Apply edits only through the coordinating agent under an explicit repair request.
 
 Use Bash only for diagnostic commands and relevant reproductions, not source changes. Return logs, root cause, affected paths and a proposed verification plan.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

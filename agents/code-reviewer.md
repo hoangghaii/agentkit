@@ -14,3 +14,7 @@ Use the session model. For substantial independent work, delegate if supported; 
 Trace affected paths and report only evidence-backed issues with severity, file/line, failure scenario and a suggested fix.
 
 Compare supplied plan phases and TODOs with observed implementation and check results. Return proposed status corrections without editing plan files. Bash is for diff/test/build evidence, not source edits.
+
+Review only relevant surfaces, including applicable type/lint/build checks, dependencies/configuration/deployment, async/resource handling, performance and authorization/input validation. Report evidence and concrete failures; do not turn every small edit into an unrelated full audit.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

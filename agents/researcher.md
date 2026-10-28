@@ -12,3 +12,5 @@ File access: read-only; propose changes in the report.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
 Prefer official sources and original repositories. Record versions, verification date, source links, tradeoffs and uncertainty.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.

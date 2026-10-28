@@ -22,10 +22,10 @@ Read back saved files and verify relative links. Return the actual overview path
 
 ## Planning modes
 
-- `--fast`: reduce research and detail; still write required overview and phase files.
+- `--fast`: no external research. Use supplied reports, available local documentation and scoped code analysis, then write the overview and required phase files. Disclose missing evidence rather than silently browsing.
 - `--hard`: expand investigation and risk analysis where complexity warrants it.
-- `--two`: compare two feasible approaches and recommend one; do not pad with an implausible alternative.
+- `--two`: produce two detailed, feasible implementation plans, not merely two option descriptions. Write a root comparison overview linking to two approach subdirectories, each with its own `plan.md` and phase files, then recommend an approach with tradeoffs. If only one approach is feasible, explain that limitation rather than fabricating another. Do not implement either approach during planning.
 - `--ci`: retrieve the supplied Actions job logs through host GitHub capabilities or `gh`, inspect workflow/configuration and identify the observed failure before planning repairs. Compare feasible repairs and recommend one; record unavailable logs as a limitation. Do not implement fixes during this mode.
-- `--cro`: plan improvements to website conversion based on the supplied page and evidence.
+- `--cro`: plan improvements to website conversion from the actual supplied page/reference and source. Assess headline/value clarity, CTA, message consistency, friction, trust, objections, mobile accessibility and measurable experiments without invented uplift percentages; planning does not apply the copy edits.
 
 Create research/report directories only for artifacts actually produced. Leave implementation to the subsequent authorized task. Hand off the overview path, phase order, assumptions and unresolved questions.

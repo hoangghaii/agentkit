@@ -72,3 +72,6 @@ prompt.md
 dist/
 .pytest_cache/
 *.pyc
+
+# Local historical source for migration comparison; never commit this copy.
+/claudekit-engineer-backup/

@@ -1,6 +1,6 @@
 ---
 name: scout-external
-description: "Inspect external reference repositories without modifying them."
+description: "Use optional external assistants to scout the current project without implementation."
 ---
 
 
@@ -11,4 +11,8 @@ Output: evidence, changed paths, checks and unresolved risks.
 File access: read-only; propose changes in the report.
 Use the session model. For substantial independent work, delegate if supported; otherwise work sequentially.
 
-Use the provided external repository or documentation. Report source versions and applicable patterns; do not invent access.
+Locate relevant local paths, symbols and execution boundaries. Report the target and evidence; do not invent access.
+
+The default target is the current local project and its supplied directories. Use an already available authorized external assistant only where useful, with a bounded read-only scope and no model override; otherwise use host-native scoped search. Inspect a remote repository only when actually requested, not merely because this role is named external.
+
+For substantial delegated work tied to an active plan, provide a concise dated role/task handoff for that plan’s `reports/` directory. Read-only workers return the complete proposed report to the coordinator, which writes and verifies it; routine small answers can remain inline. Include the report path only after it exists.
